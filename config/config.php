@@ -4,8 +4,8 @@
  * Config files
  */
 
-const WEBSITE_TITLE = "My website title";
-const BASE_URL = "/mvc";
+const WEBSITE_TITLE = "DevHelper";
+const BASE_URL = "/devhelper";
 
 const CLASSES_SOURCES = [
     'src/controller',
