@@ -1,10 +1,8 @@
 <?php ob_start(); ?>
 
-<h1>Page 404</h1>
+<h1>Apparemment, il semble que nous n'ayons potentiellement rien trouvé...</h1>
 
-<p>
-    La page demandée est indisponible
-</p>
+<img src="https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif"/>
 
 
 <?php $content = ob_get_clean() ?> 
