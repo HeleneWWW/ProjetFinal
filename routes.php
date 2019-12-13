@@ -30,17 +30,27 @@ $router->get('site/{id}/{slug}', 'PagesController@show');
 // $router->get('signin', 'PagesController@signin'); 
 // $router->post('signin', 'PagesController@signin');
 
-//admin AJOUTER
+
+
+//---------------------------------------------------------------------------------------------------------\\
+// ------------------------------------------ADMIN-----------------------------------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
+
+            //admin AJOUTER un site
 $router->get('admin/site', 'AdminController@allSite');
 $router->get('admin/site/add', 'AdminController@addSite');
 $router->post('admin/site/add', 'AdminController@addSite');
 
-//admin UPDATER un site
+            //admin UPDATER un site
 // $router->get('admin/site/modify/{id}', 'AdminController@updateSite');
 // $router->post('admin/site/modify/{id}', 'AdminController@updateSite');
 
-//admin DELETE un site
+            //admin DELETE un site
 // $router->get('admin/site/delete/{id}', 'AdminController@deleteSite');
+
+//---------------------------------------------------------------------------------------------------------\\
+// ---------------------------------------------------------------------------------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
 
 
 //déconnexion

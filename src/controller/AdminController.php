@@ -35,14 +35,14 @@ public function __construct(){
         public function addSite(){
             
                 $form = new Form($_POST);
-                $tags = Tags::getAllSelect();
+                // $tags = Tags::getAllSelect();
 
                 // var_dump($tags);
                 $form->input('text', "nom", "Nom du site")->required()
                     ->input('text', "image", "Image du site")
                     ->input('text', "url", "Url du site")->required()
                     ->input('textarea', "description", "Description")->required()
-                    ->input('checkbox', 'tags', "Tags", $tags)   //->required()
+                    // ->input('checkbox', 'tags', "Tags", $tags)   //->required()
                     ->submit('Enregistrer');
         
                 $formulaireHtml = $form->getForm();
@@ -54,18 +54,18 @@ public function __construct(){
                 if (!empty($_POST)) {
                     
                     if($data = $form->valid()){
-        var_dump($data);
+        // var_dump($data);
                         // formulaire valide
                         $formValid = true;
                     
                         // Enregistrement des données
-                       Site::dbCreate([
+                      $id = Site::save([
                             "s_nom"     => $data['nom'],
                             "s_slug"    => slugify($data['nom']),
                             "s_url"   => $data['url'],
                             "s_image"   => $data['image'],
-                            "s_description"   => $data['description'],
-                            's_id'   => $data['tags']
+                            "s_description"   => $data['description']
+                            // 's_id'   => $data['tags']
                         ]);
 
 
@@ -121,8 +121,7 @@ public function __construct(){
                     Jeuvideo::update([
                         "jv_nom"     => $_POST['jv_nom'],
                         "jv_slug"    => slugify($_POST['jv_nom']),
-                        "jv_image"   => $_POST['jv_image'],
-                        'genre_id'   => $_POST['genre_id']
+                        "jv_image"   => $_POST['jv_image']
                     ], $id);
     
                     // redirection apres ajout en BDD 

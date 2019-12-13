@@ -54,13 +54,15 @@ class User extends Db{
             if($user["u_status"] == 0){
                 $_SESSION['user'] = $user['u_pseudo'];
                 // var_dump($user);
+                redirectTo('');
             return true;
-            redirectTo('');
+            
 
             }else{
                 $_SESSION['admin'] = $user['u_pseudo'];
+                redirectTo('');
             return true;
-            redirectTo('');
+            
 
             }
 
