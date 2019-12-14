@@ -94,7 +94,7 @@ class PagesController {
    $info = User::connect($_POST['pseudo'], $_POST['password']);
             // var_dump($info);
         if ($info){
-            // redirectTo('');
+            redirectTo('');
         }
      } else {
          
@@ -103,7 +103,7 @@ class PagesController {
     }
 
     // vue de la page contact 
-        view('pages.login', compact('formhtml', 'formValid', 'errors', 'info'));
+        view('pages.login', compact('formhtml', 'formValid', 'errors'));
 
 }else{
 

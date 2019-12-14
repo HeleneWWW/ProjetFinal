@@ -17,7 +17,7 @@
     <?php foreach ($sites as $site): ?>
         <div class="row mb-2">
             <div class="col-2">
-                <img src="<?= $site['s_image']; ?>" width="100%" alt="">
+                <img src="<?= $site['s_imgindex']; ?>" width="100%" alt="">
             </div>
             <div class="col-10">
                 <a href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>"><?= $site['s_nom']; ?></a><br>

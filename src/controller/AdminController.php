@@ -63,7 +63,7 @@ public function __construct(){
                             "s_nom"     => $data['nom'],
                             "s_slug"    => slugify($data['nom']),
                             "s_url"   => $data['url'],
-                            "s_image"   => $data['image'],
+                            "s_imgindex"   => $data['image'],
                             "s_description"   => $data['description']
                             // 's_id'   => $data['tags']
                         ]);
