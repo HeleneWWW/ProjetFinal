@@ -10,6 +10,8 @@
 
 <?php ob_start(); ?>
 
+
+
 <h1>Tous les sites qu'on a en stock !</h1>
     <?= (!empty($alert)) ? $alert : '';  ?>
 

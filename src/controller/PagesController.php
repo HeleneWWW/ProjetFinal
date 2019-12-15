@@ -165,4 +165,37 @@ redirectTo('');
         view('site.onesite', compact('site','tags'));
     }
 
+    public function search(){
+            $form = new Form($_POST);
+            $form->input("text", 'search','recherche')->required()
+                 ->submit('rechercher');
+
+        $formhtml = $form->getForm();
+
+        $formValid  = false;
+        $errors     = false; 
+
+        // si le formulaire est validé 
+        if($data = $form->valid()){
+
+            // formulaire valide
+            $formValid = true;
+
+            // Enregistrement des données
+
+        } else {
+            // affichage des erreurs 
+            $errors =  $form->displayErrors();
+        }
+
+        view('', compact('formhtml', 'formValid', 'errors'));
+        // view('site.allsite', compact('formhtml', 'formValid', 'errors'));
+        // view('site.onesite', compact('formhtml', 'formValid', 'errors'));
+
+
+    }
+
+
+
+
 }

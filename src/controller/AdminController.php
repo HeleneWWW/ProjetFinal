@@ -8,10 +8,15 @@ public function __construct(){
             }else{
                 
             }
-            // if(isset($_SESSION['delete'])){
-            //    echo 'supression du site effectuée !!';
-            //    unset($_SESSION['delete']);
-            // }
+            if(isset($_SESSION['delete'])){
+               echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+               <strong>Holy guacamole!</strong> Suppression réussie !
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+             </div>';
+               unset($_SESSION['delete']);
+            }
     
 }
 
@@ -103,11 +108,10 @@ public function __construct(){
 //---------------------------------------------------------------------------------------------------------\\
 // ------------------------------------------POUR SUPPRIMER UN SITE ---------------------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
-    // pourquoi je dois apuyer deux fois sur le bouton supprimer ?
         public function deleteSite($id){
-
-          $suppr1 =  Site::delete($id);
-          $suppr2 = Tagsite::delete($id);
+          $suppr1 = Tagsite::delete($id);
+          $suppr2 =  Site::delete($id);
+          
                if($suppr1 && $suppr2){
                    $_SESSION['delete'] = true;
             
