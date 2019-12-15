@@ -27,8 +27,8 @@ $router->get('site/{id}/{slug}', 'PagesController@show');
 
 
 //Inscription utilisateur
-// $router->get('signin', 'PagesController@signin'); 
-// $router->post('signin', 'PagesController@signin');
+$router->get('signin', 'PagesController@signin'); 
+$router->post('signin', 'PagesController@signin');
 
 
 
@@ -42,11 +42,12 @@ $router->get('admin/site/add', 'AdminController@addSite');
 $router->post('admin/site/add', 'AdminController@addSite');
 
             //admin UPDATER un site
-// $router->get('admin/site/modify/{id}', 'AdminController@updateSite');
-// $router->post('admin/site/modify/{id}', 'AdminController@updateSite');
+$router->get('admin/site/modify/{id}', 'AdminController@updateSite');
+$router->post('admin/site/modify/{id}', 'AdminController@updateSite');
 
             //admin DELETE un site
-// $router->get('admin/site/delete/{id}', 'AdminController@deleteSite');
+$router->get('admin/site/delete/{id}', 'AdminController@deleteSite');
+// $router->post('admin/site/delete/{id}', 'AdminController@deleteSite');
 
 //---------------------------------------------------------------------------------------------------------\\
 // ---------------------------------------------------------------------------------------------------------\\

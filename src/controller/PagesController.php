@@ -114,9 +114,39 @@ redirectTo('');
 
     public function signin(){
         
+        if((!isset($_SESSION['user'])) || (!isset($_SESSION['user']))){
 
+            $form = new Form($_POST);
+
+        $form->input("text", 'pseudo','Ton pseudo')->required()
+      
+            ->input('text', "email", "Ton e-mail")->required()
+            ->input('password', "password", "Ton mot de passe")->required()
+            ->submit('enregistrer');
+
+        $formhtml = $form->getForm();
+
+        $formValid  = false;
+        $errors     = false; 
+
+        // si le formulaire est validé 
+        if($data = $form->valid()){
+
+            // formulaire valide
+            $formValid = true;
+
+            // Enregistrement des données
+
+        } else {
+            // affichage des erreurs 
+            $errors =  $form->displayErrors();
+        }
+
+        // vue de la page contact 
+        view('pages.signin', compact('formhtml', 'errors', 'formValid'));
 
     }
+}
 
 
 
@@ -130,8 +160,9 @@ redirectTo('');
 
     public function show($id){
         $site = Site::findOne($id);
+        $tags = Site::tagsAssocies($id);
 // var_dump($site);
-        view('site.onesite', compact('site'));
+        view('site.onesite', compact('site','tags'));
     }
 
 }

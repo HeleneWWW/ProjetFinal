@@ -20,7 +20,6 @@
             </div>
             <div class="col-10">
                 <a href="<?= url('admin/'.$site['s_id'].'/'.$site['s_slug']); ?>"><?= $site['s_nom']; ?></a><br>
-                <a href="<?= url('admin/site/modify/'.$site['s_id']) ?>" class="btn btn-sm btn-primary">Modifier</a>
                 <a href="<?= url('admin/site/delete/'.$site['s_id']) ?>" class="btn btn-sm btn-danger">Supprimer</a>
             </div>
         </div>
