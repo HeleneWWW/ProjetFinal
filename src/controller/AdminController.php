@@ -44,7 +44,7 @@ public function __construct(){
                     ->input('textarea', "description", "Description")->required()
                     // ->input('checkbox', 'tags', "Tags", $tags)   //->required()
                     ->submit('Enregistrer');
-        
+            var_dump($_POST);
                 $formulaireHtml = $form->getForm();
         
                 $formValid  = false;
@@ -54,7 +54,7 @@ public function __construct(){
                 if (!empty($_POST)) {
                     
                     if($data = $form->valid()){
-        // var_dump($data);
+         var_dump($data);
                         // formulaire valide
                         $formValid = true;
                     
@@ -63,7 +63,7 @@ public function __construct(){
                             "s_nom"     => $data['nom'],
                             "s_slug"    => slugify($data['nom']),
                             "s_url"   => $data['url'],
-                            "s_image"   => $data['image'],
+                            "s_imgindex"   => $data['image'],
                             "s_description"   => $data['description']
                             // 's_id'   => $data['tags']
                         ]);
@@ -73,7 +73,7 @@ public function __construct(){
                         // redirectTo('site/'.$id.'/'.slugify($data['nom']));
 
                         //redirection pendant le developpement
-                        redirectTo('admin/site/add');
+                       /// redirectTo('admin/site/add');
 
                     } else {
                         // affichage des erreurs 
