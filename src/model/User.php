@@ -110,16 +110,21 @@ public static function register(){
         echo'<div class="alert alert-danger" role="alert">
         Les mots de passe ne correspondent pas !
       </div>';
+      return false;
     }
         }else{
             echo'<div class="alert alert-danger" role="alert">
         Merci de renseigner tous les champs !
       </div>';
+      return false;
+
         }
     }else{
         echo '<div class="alert alert-danger" role="alert">
              Cet email est déjà utilisé !
            </div>';
+           return false;
+
     }
    return true;
 }
