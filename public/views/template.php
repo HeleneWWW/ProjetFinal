@@ -26,6 +26,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('a-propos') ?>">A Propos</a>
                             </li>
+                           <?php if((!isset($_SESSION['user'])) || (!isset($_SESSION['user']))): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('signin') ?>">S'inscrire</a>
+                            </li>
+                           <?php endif;?>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('site') ?>">Sites</a>
                             </li>
