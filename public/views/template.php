@@ -13,7 +13,7 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="padding-left:55px; height:50px;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height:50px;">
                 <div class="container">    
                     <a class="navbar-brand" href="<?= BASE_URL; ?>">
                         <img src="<?= img_url('devHelper.png') ?>" alt="devHelper" />
@@ -28,10 +28,10 @@
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <!--                         
                         <form action="search.php" method="get" id="form-search">
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-6">
                                 <input type="text" class="form-control" placeholder="Rechercher un site" id="input-site" name="site">
                             <div class="input-group-append">
-                                <button class="btn btn-secondary" type="submit" id="button">Rechercher</button>
+                                <button class="btn btn-success" type="submit" id="button">Rechercher</button>
                             </div>
                             </div>
                         </form> -->
