@@ -32,10 +32,10 @@ class PagesController {
         $form = new Form($_POST,"mailto:devHelper2019@gmail.com");
 
         $form->input('text', "pseudo", "Pseudo")->required()
-            ->input('text', "email", "E-mail")->required()
+            ->input('text', "email", "E-mail")->required()->is_email()
             ->input('text', "nom", "Nom du site")->required()
-            ->input('text', "lien", "Lien du site")->required()
-            ->input('textarea', "description", "Description")->required()
+            ->input('text', "lien", "Lien du site")->required()->is_url()
+            ->input('textarea', "description", "Description")
             ->submit('Envoyer');
 
         $formulaireHtml = $form->getForm();

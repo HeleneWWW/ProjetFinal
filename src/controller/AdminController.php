@@ -19,6 +19,7 @@ public function __construct(){
         public function allSite() {
             // appel a la BDD 
             $sites = Site::findAll();
+            
             // $tags = Site::findOne();
             $alert ='';
 if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){

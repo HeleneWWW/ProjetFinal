@@ -13,28 +13,15 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="padding-left:55px; height:50px;">
                 <div class="container">    
-                    <a class="navbar-brand" href="<?= BASE_URL; ?>">Accueil</a>
+                    <a class="navbar-brand" href="<?= BASE_URL; ?>">
+                        <img src="<?= img_url('devHelper.png') ?>" alt="devHelper" />
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= url('contact') ?>">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= url('a-propos') ?>">A Propos</a>
-                            </li>
-                           <?php if((!isset($_SESSION['user'])) || (!isset($_SESSION['admin']))): ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= url('signup') ?>">S'inscrire</a>
-                            </li>
-                           <?php endif;?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= url('site') ?>">Sites</a>
-                            </li>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------Barre de recherche------------------------------------------------------------------------------------------------------------------>
@@ -59,6 +46,10 @@
                             </li>
                     <?php endif; ?>
 
+<!----------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------Session Admin pour modifier/supprimer------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------->
+
                     <?php if(isset($_SESSION['admin'])): ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('admin/site') ?>">Admin</a>
@@ -68,16 +59,16 @@
                         </ul>
                     </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-<!-------------------------------------------------Petit message perso post connexion------------------------------------------------------------------------------------------------------------------>
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------Petit message perso post connexion-------------------------------->
+<!------------------------------------------------------------------------------------------------------------------->
 
-<?php if(isset($_SESSION['user'])): ?>
+<!-- <?php if(isset($_SESSION['user'])): ?>
 <span>Merci pour tes données perso <?=$_SESSION['user'];?> !</span>
 <?php endif;?>
 <?php if(isset($_SESSION['admin'])): ?>
 <span> <?=$_SESSION['admin'];?> est la meilleure Admin !</span>
-<?php endif;?>
+<?php endif;?> -->
 
                 </div>
             </nav>
@@ -94,12 +85,15 @@
         </div>
         </main>
 
-        <footer>
+        <footer class="bg-dark text-light">
             <div class="container">
-            <p class="float-right">
-                
-            </p>
+            <p>L'équipe :</p>
+            <p>- LE CALVEZ Gaëlle | </p>
+            <p>- LE FAY Laetitia | </p>
+            <p>- WITKOWSKI Helene |</p><br/>
+             <img class="float-right" src="<?= img_url('logodH.ico') ?>"/><br/>
             <p>2019 &copy; </p>
+           
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
