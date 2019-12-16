@@ -9,12 +9,7 @@ public function __construct(){
                 
             }
             if(isset($_SESSION['delete'])){
-               echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-               <strong>Holy guacamole!</strong> Suppression réussie !
-               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-               </button>
-             </div>';
+              
                unset($_SESSION['delete']);
             }
     
@@ -88,10 +83,9 @@ public function __construct(){
                             ]);
                         }
                         // redirection apres ajout en BDD 
-                        // redirectTo('site/'.$id.'/'.slugify($data['nom']));
+                        redirectTo('site/'.$id.'/'.slugify($data['nom']));
 
                         //redirection pendant le developpement
-                       /// redirectTo('admin/site/add');
                         // redirectTo('admin/site/add');
 
                     } else {
@@ -117,4 +111,7 @@ public function __construct(){
                }  
             redirectTo('admin/site');
         }
+       
+
+
     }
