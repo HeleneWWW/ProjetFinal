@@ -8,8 +8,11 @@
 
 <?php ob_start(); ?>
 
+
+
 <h1>Tous les sites qu'on a en stock !</h1>
-    <?= (!empty($alert)) ? $alert : '';  ?>
+<?=  (!empty($alert)) ? $alert : '' ; ?>
+
 <a href="<?=url('admin/site/add'); ?>" class="btn btn-primary">Ajouter un nouveau site</a>
 
 <div class="mt-4">

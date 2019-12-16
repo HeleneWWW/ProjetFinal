@@ -13,7 +13,7 @@
 
 
 <h1>Tous les sites qu'on a en stock !</h1>
-    <?= (!empty($alert)) ? $alert : '';  ?>
+    <?= var_dump($_SESSION); (!empty($alert)) ? $alert : '';  ?>
 
 <div class="mt-4">
     <?php foreach ($sites as $site): ?>

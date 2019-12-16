@@ -49,8 +49,8 @@ $router->get('admin/site/delete/{id}', 'AdminController@deleteSite');
 
 
 //Recherche
-$router->get('', 'PagesController@search'); 
-// $router->post('', 'PagesController@search');
+$router->get('search', 'PagesController@search'); 
+$router->post('search', 'PagesController@search');
 
 //déconnexion
 $router->get('logout', 'PagesController@logout'); 

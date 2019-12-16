@@ -8,15 +8,7 @@ public function __construct(){
             }else{
                 
             }
-            if(isset($_SESSION['delete'])){
-               echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-               <strong>Holy guacamole!</strong> Suppression réussie !
-               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-               </button>
-             </div>';
-               unset($_SESSION['delete']);
-            }
+            
     
 }
 
@@ -28,10 +20,16 @@ public function __construct(){
             // appel a la BDD 
             $sites = Site::findAll();
             // $tags = Site::findOne();
-
-
+            $alert ='';
+if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
+    // var_dump($_SESSION);
+   $alert = alerte('Suppression réussie','https://media2.giphy.com/media/XreQmk7ETCak0/giphy.gif');
+    
+    unset($_SESSION['delete']);
+}
           
-            view('admin.allsites', compact('sites'));
+            view('admin.allsites', compact('sites','alert'));
+            // unset($_SESSION['delete']);
         }
         
 //---------------------------------------------------------------------------------------------------------\\
@@ -89,9 +87,8 @@ public function __construct(){
                         }
                         // redirection apres ajout en BDD 
                         // redirectTo('site/'.$id.'/'.slugify($data['nom']));
-
                         //redirection pendant le developpement
-                       /// redirectTo('admin/site/add');
+                        redirectTo('admin/site/add');
                         // redirectTo('admin/site/add');
 
                     } else {
@@ -101,20 +98,23 @@ public function __construct(){
                 }
                 
                 // vue de la page contact 
-                view('admin.addsite', compact('formulaireHtml','errors'));
+                view('admin.addsite', compact('formulaireHtml','errors','alert'));
    
         }
 //---------------------------------------------------------------------------------------------------------\\
 // ------------------------------------------POUR SUPPRIMER UN SITE ---------------------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
         public function deleteSite($id){
+
           $suppr1 = Tagsite::delete($id);
           $suppr2 =  Site::delete($id);
-          
-               if($suppr1 && $suppr2){
+            
                    $_SESSION['delete'] = true;
             
-               }  
-            redirectTo('admin/site');
-        }
+              redirectTo('admin/site');
+               
+            }
+
+
+
     }

@@ -185,7 +185,7 @@ public static function findByTag($search){
 // ------------------------------------------POUR TROUVER DES SITES PAR NOM -------------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
 
-public static function findByName($name){
+function findByName($name){
     $bdd = Db::getDb();
     $query = $bdd->prepare("SELECT sites.* 
                             from sites 
