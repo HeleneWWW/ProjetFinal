@@ -57,7 +57,7 @@ public function __construct(){
                     ->input('textarea', "description", "Description")->required()
                     ->input('checkbox', 'tags', "Tags", $tags)   //->required()
                     ->submit('Enregistrer');
-        
+            var_dump($_POST);
                 $formulaireHtml = $form->getForm();
         
                 $formValid  = false;
@@ -66,6 +66,7 @@ public function __construct(){
                 // si le formulaire est validé 
                 if (!empty($_POST)) {
                     if($data = $form->valid()){
+                        
                         // formulaire valide
                         $formValid = true;
                     
@@ -90,6 +91,7 @@ public function __construct(){
                         // redirectTo('site/'.$id.'/'.slugify($data['nom']));
 
                         //redirection pendant le developpement
+                       /// redirectTo('admin/site/add');
                         // redirectTo('admin/site/add');
 
                     } else {
