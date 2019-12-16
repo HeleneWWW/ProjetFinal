@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
+        <link rel="icon"  href="<?= img_url('logodH.ico') ?>" />
         <title><?= isset($title) ? $title : WEBSITE_TITLE ?></title>
 
         <!-- Bootstrap core CSS -->
@@ -34,11 +35,20 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('site') ?>">Sites</a>
                             </li>
-                            <?php if(isset($_SESSION['admin'])): ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= url('admin/site') ?>">Admin</a>
-                            </li>
-                        <?php endif;?>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------Barre de recherche------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        
+                        <!-- <form action="" method="get" id="form-search">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Rechercher un site" id="input-site" name="site">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="submit" id="button">Rechercher</button>
+                            </div>
+                            </div>
+                        </form> -->
+
                     <?php if((isset($_SESSION['user'])) || (isset($_SESSION['admin']))): ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('logout') ?>">Déconnexion</a>
@@ -48,8 +58,20 @@
                                 <a class="nav-link" href="<?= url('login') ?>">Connexion</a>
                             </li>
                     <?php endif; ?>
+
+                    <?php if(isset($_SESSION['admin'])): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('admin/site') ?>">Admin</a>
+                            </li>
+                        <?php endif;?>
+
                         </ul>
                     </div>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!-------------------------------------------------Petit message perso post connexion------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
 <?php if(isset($_SESSION['user'])): ?>
 <span>Merci pour tes données perso <?=$_SESSION['user'];?> !</span>
 <?php endif;?>
