@@ -163,6 +163,20 @@ public static function tagsAssocies(int $id) {
 
 }
 
+//---------------------------------------------------------------------------------------------------------\\
+// ------------------------------------------POUR TROUVER DES SITES PAR TAG -----------------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
+
+public static function findByTag($search){
+    $bdd = Db::getDb();
+    $query = $bdd->prepare('SELECT sites.*,tags.* 
+                            from sites 
+                            INNER JOIN tag_site ON sites.s_id = tag_site.s_id
+                            join tags ON tags.t_id = tag_site.t_id
+                            WHERE tags.t_nom LIKE % :search % ');
+                            
+}
+
 // public static function sameAs($id, $genre_id) {
 
 //     $bdd = Db::getDb();
