@@ -5,7 +5,7 @@
  */
 
 const WEBSITE_TITLE = "DevHelper";
-const BASE_URL = "/devhelper";
+const BASE_URL = "/ProjetFinal";
 
 const CLASSES_SOURCES = [
     'src/controller',

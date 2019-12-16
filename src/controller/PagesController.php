@@ -112,9 +112,9 @@ redirectTo('');
 
     }
 
-    public function signin(){
+    public function signup(){
         
-        if((!isset($_SESSION['user'])) || (!isset($_SESSION['user']))){
+        if((!isset($_SESSION['user'])) || (!isset($_SESSION['admin']))){
 
             $form = new Form($_POST);
 
@@ -143,7 +143,7 @@ redirectTo('');
         }
 
         // vue de la page contact 
-        view('pages.signin', compact('formhtml', 'errors', 'formValid'));
+        view('pages.signup', compact('formhtml', 'errors', 'formValid'));
 
     }
 }
@@ -194,8 +194,5 @@ redirectTo('');
 
 
     }
-
-
-
 
 }

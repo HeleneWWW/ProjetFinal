@@ -26,9 +26,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('a-propos') ?>">A Propos</a>
                             </li>
-                           <?php if((!isset($_SESSION['user'])) || (!isset($_SESSION['user']))): ?>
+                           <?php if((!isset($_SESSION['user'])) || (!isset($_SESSION['admin']))): ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= url('signin') ?>">S'inscrire</a>
+                                <a class="nav-link" href="<?= url('signup') ?>">S'inscrire</a>
                             </li>
                            <?php endif;?>
                             <li class="nav-item">

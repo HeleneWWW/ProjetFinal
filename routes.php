@@ -29,8 +29,8 @@ $router->get('site/{id}/{slug}', 'PagesController@show');
 
 
 //Inscription utilisateur
-$router->get('signin', 'PagesController@signin'); 
-$router->post('signin', 'PagesController@signin');
+$router->get('signup', 'PagesController@signup'); 
+$router->post('signup', 'PagesController@signup');
 
 
 
