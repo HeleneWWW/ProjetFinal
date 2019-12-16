@@ -72,7 +72,7 @@ class Db {
 
         // Construction de la requête au format : INSERT INTO $table($data.keys) VALUES(:$data.keys) 
         $req  = "DELETE FROM " . $table . " WHERE " . array_keys($data)[0] . " = :" . array_keys($data)[0];
-
+        
         $response = $bdd->prepare($req);
 
         $delete = $response->execute($data);

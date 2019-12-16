@@ -8,8 +8,10 @@ $router->get('', 'PagesController@home');
 
 // example.com/a-propos
 $router->get('a-propos', 'PagesController@about');
+
 // example.com/contact
 $router->get('contact', 'PagesController@contact');
+
 // reception des données 
 $router->post('contact', 'PagesController@contact');
 
@@ -27,8 +29,8 @@ $router->get('site/{id}/{slug}', 'PagesController@show');
 
 
 //Inscription utilisateur
-// $router->get('signin', 'PagesController@signin'); 
-// $router->post('signin', 'PagesController@signin');
+$router->get('signin', 'PagesController@signin'); 
+$router->post('signin', 'PagesController@signin');
 
 
 
@@ -41,17 +43,14 @@ $router->get('admin/site', 'AdminController@allSite');
 $router->get('admin/site/add', 'AdminController@addSite');
 $router->post('admin/site/add', 'AdminController@addSite');
 
-            //admin UPDATER un site
-// $router->get('admin/site/modify/{id}', 'AdminController@updateSite');
-// $router->post('admin/site/modify/{id}', 'AdminController@updateSite');
 
             //admin DELETE un site
-// $router->get('admin/site/delete/{id}', 'AdminController@deleteSite');
+$router->get('admin/site/delete/{id}', 'AdminController@deleteSite');
 
-//---------------------------------------------------------------------------------------------------------\\
-// ---------------------------------------------------------------------------------------------------------\\
-//---------------------------------------------------------------------------------------------------------\\
 
+//Recherche
+$router->get('', 'PagesController@search'); 
+// $router->post('', 'PagesController@search');
 
 //déconnexion
 $router->get('logout', 'PagesController@logout'); 
