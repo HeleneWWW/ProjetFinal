@@ -52,9 +52,9 @@ public function __construct(){
         
                 // si le formulaire est validé 
                 if (!empty($_POST)) {
-                    
+        var_dump($_POST);
                     if($data = $form->valid()){
-        // var_dump($data);
+        var_dump($data);
                         // formulaire valide
                         $formValid = true;
                     
@@ -73,7 +73,7 @@ public function __construct(){
                         // redirectTo('site/'.$id.'/'.slugify($data['nom']));
 
                         //redirection pendant le developpement
-                        redirectTo('admin/site/add');
+                        // redirectTo('admin/site/add');
 
                     } else {
                         // affichage des erreurs 
