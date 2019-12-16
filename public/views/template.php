@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
-        <link rel="icon"  href="<?= img_url('logod.ico') ?>" />
+        <link rel="icon"  href="<?= img_url('logodH.ico') ?>" />
         <title><?= isset($title) ? $title : WEBSITE_TITLE ?></title>
 
         <!-- Bootstrap core CSS -->

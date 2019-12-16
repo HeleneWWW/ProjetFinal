@@ -57,7 +57,7 @@ public function __construct(){
                     ->input('textarea', "description", "Description")->required()
                     ->input('checkbox', 'tags', "Tags", $tags)   //->required()
                     ->submit('Enregistrer');
-            var_dump($_POST);
+            // var_dump($_POST);
                 $formulaireHtml = $form->getForm();
         
                 $formValid  = false;
@@ -66,7 +66,7 @@ public function __construct(){
                 // si le formulaire est validé 
                 if (!empty($_POST)) {
                     if($data = $form->valid()){
-                        
+
                         // formulaire valide
                         $formValid = true;
                     
