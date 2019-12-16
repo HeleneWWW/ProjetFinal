@@ -3,9 +3,10 @@
 
 
 
-
-<h1>Bienvenue !</h1>
-<p>Bientôt, pour votre plaisir, la barre de recherche !</p>
+<div>
+    <img src="<?= img_url('banner2.png') ?>"  style="height: 50%;">
+</div>
+    
 
 <p>
     <?= $data ?>
