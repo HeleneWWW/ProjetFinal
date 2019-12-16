@@ -85,43 +85,46 @@ class User extends Db{
         session_destroy();
             }
 
-// Fonction d'Enregistrement d'un Utilisateur
+//---------------------------------------------------------------------------------------------------------\\
+// ------------------------------------------POUR S'INSCRIRE !!!!!! ---------------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
 
 public static function register(){
     //connexion à la BDD
     $bdd = Db::getDb();
-
-    //verification si l'email est déjà en BDD
-    $verifMail = $bdd->prepare('SELECT u_email FROM user WHERE u_email = :email');
+    $verifMail = $bdd->prepare('SELECT u_email FROM user WHERE u_email = :mail');
     $verifMail->execute([
-    'email' => $_POST['email']
-]);
+        'mail' => $_POST['email']
+    ]);
     $check = $verifMail->fetch(PDO::FETCH_ASSOC);
-    
-    //si l'email est différent alors j'insère le nouvel utilisateur en BDD
     if(empty($check)){
-        $req = $bdd->prepare("INSERT INTO user('u_pseudo','u_email','u_password','u_status') VALUES (:pseudo, :email, :password, :status)");
-        if(!empyt($_POST['pseudo']&&!empty($_POST['email'])&&!empty($_POST['password'])){
-            var_dump($_POST);
-            // Vérification que les 2 passwords sont identiques
+        $req = $bdd->prepare("INSERT INTO user(`u_pseudo`,`u_email`,`u_password`,`u_status`) VALUES (:pseudo, :mail, :pw , :status)");
+        if(!empty($_POST['pseudo'])&&!empty($_POST['email'])&&!empty($_POST['password2'])&&!empty($_POST['password'])){
             if ($_POST['password'] === $_POST['password2']){
-            $req->execute([
-            'pseudo' => $_POST['pseudo'],
-            'email' => $_POST['email'],
-            // Cryptage des mots de passe
-            'password' => password_hash($_POST['password'],PASSWORD_BCRYPT),
-            //statut par défaut à 0 = membre normal 1 = admin
-            'status' => 0
-]);}
-        }
+    $req->execute([
+        'pseudo' => $_POST['pseudo'],
+        'mail' => $_POST['email'],
+        'pw' => password_hash($_POST['password'],PASSWORD_BCRYPT),
+        'status' => 0
+    ]);}else{
+        echo'<div class="alert alert-danger" role="alert">
+        Les mots de passe ne correspondent pas !
+      </div>';
     }
-            return true; 
-}    
+        }else{
+            echo'<div class="alert alert-danger" role="alert">
+        Merci de renseigner tous les champs !
+      </div>';
+        }
+    }else{
+        echo '<div class="alert alert-danger" role="alert">
+             Cet email est déjà utilisé !
+           </div>';
+    }
+   return true;
+}
 
 
-   
-
-//fin de la classe// 
 }
 
 ///////////////////
