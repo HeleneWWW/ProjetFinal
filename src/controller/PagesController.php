@@ -89,7 +89,7 @@ class PagesController {
         $formValid = true;
 
         // ENregistrement des données
-// var_dump($_POST);
+        //var_dump($_POST);
 
    $info = User::connect($_POST['pseudo'], $_POST['password']);
             // var_dump($info);
@@ -122,6 +122,7 @@ redirectTo('');
       
             ->input('text', "email", "Ton e-mail")->required()
             ->input('password', "password", "Ton mot de passe")->required()
+            ->input('password', "password2", "Confirmation de ton mot de passe")->required()
             ->submit('enregistrer');
 
         $formhtml = $form->getForm();
@@ -136,6 +137,11 @@ redirectTo('');
             $formValid = true;
 
             // Enregistrement des données
+        $register = User::register();
+        var_dump($register);
+        if($register){
+            redirectTo('');
+        }
 
         } else {
             // affichage des erreurs 
