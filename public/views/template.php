@@ -26,8 +26,37 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('a-propos') ?>">A Propos</a>
                             </li>
+                           <?php if((!isset($_SESSION['user'])) || (!isset($_SESSION['user']))): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('signin') ?>">S'inscrire</a>
+                            </li>
+                           <?php endif;?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('site') ?>">Sites</a>
+                            </li>
+                            <?php if(isset($_SESSION['admin'])): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('admin/site') ?>">Admin</a>
+                            </li>
+                        <?php endif;?>
+                    <?php if((isset($_SESSION['user'])) || (isset($_SESSION['admin']))): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('logout') ?>">Déconnexion</a>
+                            </li>
+                    <?php else :?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('login') ?>">Connexion</a>
+                            </li>
+                    <?php endif; ?>
                         </ul>
                     </div>
+<?php if(isset($_SESSION['user'])): ?>
+<span>Merci pour tes données perso <?=$_SESSION['user'];?> !</span>
+<?php endif;?>
+<?php if(isset($_SESSION['admin'])): ?>
+<span> <?=$_SESSION['admin'];?> est la meilleure Admin !</span>
+<?php endif;?>
+
                 </div>
             </nav>
         </header>

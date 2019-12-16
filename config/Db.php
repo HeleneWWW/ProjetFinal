@@ -4,9 +4,9 @@ class Db {
 
     private const DB_HOST = 'localhost';
     private const DB_PORT = '3306';
-    private const DB_NAME = 'video_games';
+    private const DB_NAME = 'devhelper';
     private const DB_USER = 'root';
-    private const DB_PWD  = 'root';
+    private const DB_PWD  = '';
 
     public function __construct() { 
 
@@ -72,7 +72,7 @@ class Db {
 
         // Construction de la requête au format : INSERT INTO $table($data.keys) VALUES(:$data.keys) 
         $req  = "DELETE FROM " . $table . " WHERE " . array_keys($data)[0] . " = :" . array_keys($data)[0];
-
+        
         $response = $bdd->prepare($req);
 
         $delete = $response->execute($data);
