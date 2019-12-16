@@ -9,12 +9,7 @@ public function __construct(){
                 
             }
             if(isset($_SESSION['delete'])){
-               echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-               <strong>Holy guacamole!</strong> Suppression réussie !
-               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-               </button>
-             </div>';
+              
                unset($_SESSION['delete']);
             }
     
@@ -27,6 +22,7 @@ public function __construct(){
         public function allSite() {
             // appel a la BDD 
             $sites = Site::findAll();
+            
             // $tags = Site::findOne();
 
 
@@ -88,10 +84,9 @@ public function __construct(){
                             ]);
                         }
                         // redirection apres ajout en BDD 
-                        // redirectTo('site/'.$id.'/'.slugify($data['nom']));
+                        redirectTo('site/'.$id.'/'.slugify($data['nom']));
 
                         //redirection pendant le developpement
-                       /// redirectTo('admin/site/add');
                         // redirectTo('admin/site/add');
 
                     } else {
@@ -110,11 +105,14 @@ public function __construct(){
         public function deleteSite($id){
           $suppr1 = Tagsite::delete($id);
           $suppr2 =  Site::delete($id);
-          
+          $alert ='';
                if($suppr1 && $suppr2){
                    $_SESSION['delete'] = true;
-            
+                   
                }  
             redirectTo('admin/site');
         }
+       
+
+
     }
