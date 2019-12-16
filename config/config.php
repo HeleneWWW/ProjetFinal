@@ -4,7 +4,7 @@
  * Config files
  */
 
-const WEBSITE_TITLE = "My website title";
+const WEBSITE_TITLE = "DevHelper";
 const BASE_URL = "/ProjetFinal";
 
 const CLASSES_SOURCES = [
