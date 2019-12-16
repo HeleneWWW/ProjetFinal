@@ -100,6 +100,7 @@ class PagesController {
          
         // affichage des erreurs 
         $errors =  $form->displayErrors();
+        
     }
 
     // vue de la page contact 
@@ -171,37 +172,6 @@ redirectTo('');
         view('site.onesite', compact('site','tags'));
     }
 
-    public function search(){
-            $form = new Form($_POST);
-            $form->input("text", 'search','Recherche')->required()
-                 ->submit('rechercher');
-
-        $formhtml = $form->getForm();
-
-        $formValid  = false;
-        $errors     = false; 
-
-        // si le formulaire est validé 
-        if($data = $form->valid()){
-
-            // formulaire valide
-            $formValid = true;
-
-            $nom = Site::findByName();
-            $tag = Site::finByTag();
-            var_dump($nom,$tag);
-            // Enregistrement des données
-
-        } else {
-            // affichage des erreurs 
-            $errors =  $form->displayErrors();
-        }
-
-        view('pages.search', compact('formhtml', 'formValid', 'errors'));
-        // view('site.allsite', compact('formhtml', 'formValid', 'errors'));
-        // view('site.onesite', compact('formhtml', 'formValid', 'errors'));
-
-
-    }
+    
 
 }

@@ -80,8 +80,8 @@ function view($path, $vars = null, $include = true) {
 }
 
 
-function alerte($text, $link) {
-    return '<div style="background: lightgreen; text-align:center;">'.$text.'</div><img src="'.$link.'"/>'; 
-    // return '<div class="alert alert-'.$alert.'" role="alert">'.$text.'</div>';
+function alerte($text, $alert = 'danger') {
+    // return '<div style="background: lightgreen; text-align:center;">'.$text.'</div><img src="'.$link.'"/>'; 
+    return '<div class="alert alert-'.$alert.'" role="alert">'.$text.'</div>';
 // return '<b>'.$text.$alert.'</b>';
 }

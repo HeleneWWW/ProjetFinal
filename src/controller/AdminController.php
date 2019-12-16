@@ -24,7 +24,7 @@ public function __construct(){
             $alert ='';
 if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
     // var_dump($_SESSION);
-   $alert = alerte('Suppression réussie','https://media2.giphy.com/media/XreQmk7ETCak0/giphy.gif');
+   $alert = alerte('Suppression réussie','success');
     
     unset($_SESSION['delete']);
 }
