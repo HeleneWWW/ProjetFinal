@@ -29,14 +29,14 @@ class PagesController {
 
     public function contact() {
 
-        $form = new Form($_POST);
+        $form = new Form($_POST,"mailto:devHelper2019@gmail.com");
 
-        $form->input("select", 'civilite', 'Civilité', [1=>'M', 2=>'Mme', 3=>'Mlle'])->required()
-            ->input('text', "nom", "Nom")->required()
-            ->input('text', "prenom", "Prénom")->required()
+        $form->input('text', "pseudo", "Pseudo")->required()
             ->input('text', "email", "E-mail")->required()
-            ->input('textarea', "message", "Message")->required()
-            ->submit('enregistrer');
+            ->input('text', "nom", "Nom du site")->required()
+            ->input('text', "lien", "Lien du site")->required()
+            ->input('textarea', "description", "Description")->required()
+            ->submit('Envoyer');
 
         $formulaireHtml = $form->getForm();
 
