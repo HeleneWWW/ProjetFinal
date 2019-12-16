@@ -140,7 +140,7 @@ redirectTo('');
         $register = User::register();
         var_dump($register);
         if($register){
-            redirectTo('');
+            // redirectTo('');
         }
 
         } else {
