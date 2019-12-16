@@ -39,6 +39,20 @@
                                 <a class="nav-link" href="<?= url('admin/site') ?>">Admin</a>
                             </li>
                         <?php endif;?>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------Barre de recherche------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        
+                        <form action="" method="get" id="form-search">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Rechercher un site" id="input-site" name="site">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="submit" id="button">Rechercher</button>
+                            </div>
+                            </div>
+                        </form>
+
                     <?php if((isset($_SESSION['user'])) || (isset($_SESSION['admin']))): ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('logout') ?>">Déconnexion</a>
