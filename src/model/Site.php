@@ -140,7 +140,7 @@ public static function findMedias(int $id) {
 
 
 //---------------------------------------------------------------------------------------------------------\\
-// ------------------------------------------POUR TROUVER LES TAGS ASSOCIES A UN SITE -----------------------------------------\\
+// ------------------------------------------POUR TROUVER LES TAGS ASSOCIES A UN SITE ---------------------\\
 //---------------------------------------------------------------------------------------------------------\\
 
 
@@ -164,18 +164,39 @@ public static function tagsAssocies(int $id) {
 }
 
 //---------------------------------------------------------------------------------------------------------\\
-// ------------------------------------------POUR TROUVER DES SITES PAR TAG -----------------------------------------\\
+// ------------------------------------------POUR TROUVER DES SITES PAR TAG -------------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
 
 public static function findByTag($search){
     $bdd = Db::getDb();
-    $query = $bdd->prepare('SELECT sites.*,tags.* 
+    $query = $bdd->prepare("SELECT sites.*,tags.* 
                             from sites 
                             INNER JOIN tag_site ON sites.s_id = tag_site.s_id
                             join tags ON tags.t_id = tag_site.t_id
-                            WHERE tags.t_nom LIKE % :search % ');
+                            WHERE tags.t_nom LIKE '%:search%'");
+                            $query->execute([
+                                'search' => $search
+                            ]);
+                            return $query->fetchAll(PDO::FETCH_ASSOC);
                             
 }
+
+//---------------------------------------------------------------------------------------------------------\\
+// ------------------------------------------POUR TROUVER DES SITES PAR NOM -------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
+
+public static function findByName($name){
+    $bdd = Db::getDb();
+    $query = $bdd->prepare("SELECT sites.* 
+                            from sites 
+                            WHERE sites.s_nom LIKE '%:name%'");
+                            $query->execute([
+                                'name' => $name
+                            ]);
+                            return $query->fetchAll(PDO::FETCH_ASSOC);
+                            
+}
+
 
 // public static function sameAs($id, $genre_id) {
 
