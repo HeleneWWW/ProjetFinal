@@ -22,6 +22,7 @@ public function __construct(){
         public function allSite() {
             // appel a la BDD 
             $sites = Site::findAll();
+            
             // $tags = Site::findOne();
 
 
@@ -104,10 +105,10 @@ public function __construct(){
         public function deleteSite($id){
           $suppr1 = Tagsite::delete($id);
           $suppr2 =  Site::delete($id);
-          
+          $alert ='';
                if($suppr1 && $suppr2){
                    $_SESSION['delete'] = true;
-            
+                   
                }  
             redirectTo('admin/site');
         }
