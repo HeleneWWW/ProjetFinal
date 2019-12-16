@@ -140,7 +140,7 @@ redirectTo('');
         $register = User::register();
         var_dump($register);
         if($register){
-            // redirectTo('');
+            redirectTo('');
         }
 
         } else {
@@ -152,6 +152,7 @@ redirectTo('');
         view('pages.signup', compact('formhtml', 'errors', 'formValid'));
 
     }
+
 }
 
 
@@ -173,7 +174,7 @@ redirectTo('');
 
     public function search(){
             $form = new Form($_POST);
-            $form->input("text", 'search','recherche')->required()
+            $form->input("text", 'search','Recherche')->required()
                  ->submit('rechercher');
 
         $formhtml = $form->getForm();
@@ -194,7 +195,7 @@ redirectTo('');
             $errors =  $form->displayErrors();
         }
 
-        view('', compact('formhtml', 'formValid', 'errors'));
+        view('pages.search', compact('formhtml', 'formValid', 'errors'));
         // view('site.allsite', compact('formhtml', 'formValid', 'errors'));
         // view('site.onesite', compact('formhtml', 'formValid', 'errors'));
 
