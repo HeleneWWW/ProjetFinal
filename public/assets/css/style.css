@@ -141,10 +141,12 @@ footer {
 
   }
 
-  @media (max-width: 1199px){
+
+} 
+ @media (max-width: 1199px){
     .grid-sizer,.grid-item{
-    width: calc((100% - 15%) / 3);
+    width: calc((100% - 15%) / 2);
   
     }
+  }
   
-}
