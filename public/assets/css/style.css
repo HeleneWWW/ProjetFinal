@@ -1,6 +1,15 @@
+@font-face {
+  font-family: "Questrial", sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+}
+
 html, footer {
     background: #99a8b7;
     
+}
+
+body {
+  font-family: "Questrial", sans-serif;
 }
 
 footer {
@@ -36,12 +45,12 @@ footer {
   }
   
   footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    /* padding-top: 3rem;
+    padding-bottom: 3rem; */
   }
   
   footer p {
-    margin-bottom: .25rem;
+    /* margin-bottom: .25rem; */
   }
 
   a {
@@ -61,7 +70,31 @@ footer {
 
 /* -------------------------------------------------------------------------------------------------------- */
   /* CSS Isotope*/
-.grid-item { width: 25%; }
-.grid-item-width2 { width: 50%; }
+.grid-item { width: 50%; }
+.grid-item-width2 { width: 100%; }
+* { box-sizing: border-box; }
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.grid-item {
+  position: relative;
+  float: center;
+  width: 25%;
 
+}
 
+.grid-item > * {
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS About */
+
+.logo {
+  width: 20%;
+  height: 20%;
+  float : left; 
+}
