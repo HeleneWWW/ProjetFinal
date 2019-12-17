@@ -22,7 +22,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                    
+                    <ul class="navbar-nav mr-auto">
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------Barre de recherche------------------------------------------------------------------------------------------------------------------>
@@ -36,19 +36,45 @@
                             </div>
                             </div>
                         </form>
+                        <li class="nav-item">
+                                <a class="nav-link" href="<?= url('a-propos') ?>">A Propos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('contact') ?>">Contact</a>
+                            </li>
+                            
+                           
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="<?= url('site') ?>">Sites</a>
+                            </li> -->
+
+
+
+<!---------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------Inscription----------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------->
+
+                    <?php if((!isset($_SESSION['user'])) && (!isset($_SESSION['admin']))): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= url('signup') ?>">S'inscrire</a>
+                        </li>
+                    <?php endif;?>
+
+<!----------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------Connexion / Déconnexion------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------->
+
 
                     <?php if((isset($_SESSION['user'])) || (isset($_SESSION['admin']))): ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('logout') ?>">Déconnexion</a>
                             </li>
-                    <?php else :?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= url('login') ?>">Connexion</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= url('signup') ?>">S'inscrire</a>
-                            </li>
+                    <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= url('login') ?>">Connexion</a>
+                        </li>
                     <?php endif; ?>
+                    
 
 <!----------------------------------------------------------------------------------------------------------------->
 <!---------------------------------------Session Admin pour modifier/supprimer------------------------------------->
@@ -58,21 +84,19 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('admin/site') ?>">Admin</a>
                             </li>
-                        <?php endif;?>
-
+                    <?php endif; ?>
                         </ul>
                     </div>
-
 <!------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------Petit message perso post connexion-------------------------------->
 <!------------------------------------------------------------------------------------------------------------------->
 
-<!-- <?php if(isset($_SESSION['user'])): ?>
+<?php if(isset($_SESSION['user'])): ?>
 <span>Merci pour tes données perso <?=$_SESSION['user'];?> !</span>
 <?php endif;?>
 <?php if(isset($_SESSION['admin'])): ?>
 <span> <?=$_SESSION['admin'];?> est la meilleure Admin !</span>
-<?php endif;?> -->
+<?php endif;?>
 
                 </div>
             </nav>
