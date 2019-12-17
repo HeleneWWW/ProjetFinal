@@ -1,18 +1,22 @@
 <?php ob_start(); ?>
 
-<h1>Connectez vous</h1>
+<div class="container">
 
+    <h1>Connectez vous</h1>
+        <hr/>
 
-<?php if (!$formValid): ?>
+    <?php if (!$formValid): ?>
 
-    <?= $errors; ?>
-    <!-- formulaire -->
-    <?= $formhtml; ?>
+        <?= $errors; ?>
+        <!-- formulaire -->
+        <?= $formhtml; ?>
 
-<?php else: ?>
+    <?php else: ?>
 
-    <!-- <p>Votre demande à bien été prise en compte.</p> -->
+        <!-- <p>Votre demande à bien été prise en compte.</p> -->
 
-<?php endif; ?>
+    <?php endif; ?>
+
+</div>
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>

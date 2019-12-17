@@ -1,10 +1,15 @@
 
 <?php ob_start(); ?>
 
-<h1>Votre recherche</h1>
+<div class="container">
 
-<?= var_dump($alert); ?>
+    <h1>Votre recherche</h1>
+        <hr/>
 
-<?= var_dump($tag); ?>
+    <?= var_dump($alert); ?>
+
+    <?= var_dump($tag); ?>
+    
+</div>
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>
