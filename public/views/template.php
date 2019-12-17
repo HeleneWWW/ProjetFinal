@@ -19,7 +19,7 @@
 
         <header>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height : 50px;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
                 <a class="navbar-brand" href="<?= BASE_URL; ?>">
                     <img src="<?= img_url('devHelper.png') ?>" alt="devHelper" />
                 </a>
@@ -92,12 +92,13 @@
 <!-------------------------------------------------Barre de recherche------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------->
 
-                <form class="form-inline my-2 my-lg-0" action="<?= url('search') ?>" method="get" id="form-search">
-                <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un site" aria-label="Recherche">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-                </form>
+                
 
             </ul>
+                <form class="form-inline my-2 my-lg-0" action="<?= url('search') ?>" method="get" id="form-search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un site" aria-label="Recherche">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+                </form>
             </div>
         </nav>
         </header>
@@ -155,11 +156,10 @@
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">  devHelper.com</a>
             </div>
         </footer>
-
-
+        
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>  <!--  Script d'Isotope -->
+        <script src="<?= js_url('isotope.pkgd.js'); ?>"></script>  <!--  Script d'Isotope -->
         <script src="<?= js_url('script.js'); ?>"></script>
     </body>
 </html>
