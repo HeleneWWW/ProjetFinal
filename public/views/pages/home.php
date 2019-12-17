@@ -10,12 +10,11 @@
 
 <p>
     <?= $data ?>
-    <div class="grid">
-  <div class="grid-item"><img src="<?= img_url('bootstrap1.png') ?>"  style="height: 50%;"></div>
-  <div class="grid-item grid-item--width2"><img src="<?= img_url('bootstrap1.png') ?>"  style="height: 50%;"></div>
-  <div class="grid-item">...</div>
-  ...
-</div>
+    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 100 } }'>
+  <div class="grid-item"><img src="<?= img_url('bootstrap1.png') ?>"></div>
+  <div class="grid-item"><img src="<?= img_url('bootstrap1.png') ?>"></div>
+ </div>
+
 </p>
 
 
