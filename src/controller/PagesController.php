@@ -7,8 +7,7 @@ class PagesController {
     /* Page d'acceuil  */ 
     public function home() {
 
-        // données à récuperer de mon model 
-        $data = "Page d'accueil";
+        // données à récuperer de mon model
         view('pages.home', compact('data'));
 
 
