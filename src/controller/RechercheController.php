@@ -16,14 +16,25 @@ class RechercheController {
     //         // formulaire valide
     //         $formValid = true;
 
-if(isset($_GET['site'])){
-            // $nom = Site::findByName($query);
-            $tag = Site::findByTag($_GET['site']);
-            $alert = '';
-            echo 'quelquechose';
+// $tag = Site::findByTag();
+// $alert = '';
+$tag = '';
+if(!empty($_GET['site'])){
+
+    $tag = Site::findByTag($_GET['site']);
+$alert = '';
+    if(empty($tag)){
+        $nom = Site::findByName($_GET['site']);
+        $alert = ''; 
+        if(empty($nom)){
+redirectTo('pages.404'); 
+       }
+    }
+           
+            
+            
 }else{
     $alert = alerte('Pas de recherche vide');
-    echo 'rien';
 }
            
 
@@ -36,7 +47,7 @@ if(isset($_GET['site'])){
     //     }
 
 
-        view('pages.search', compact('tag','alert'));
+        view('pages.search', compact('tag','alert','nom'));
         // view('site.allsite', compact('searchformhtml', 'formValid', 'errors'));
         // view('site.onesite', compact('searchformhtml', 'formValid', 'errors'));
 
