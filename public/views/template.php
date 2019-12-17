@@ -8,13 +8,13 @@
         <title><?= isset($title) ? $title : WEBSITE_TITLE ?></title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="<?= css_url('bootstrap.min.css'); ?>" rel="stylesheet">
         <link href="<?= css_url('style.css'); ?>" rel="stylesheet">
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height:50px;">
-                <div class="container">    
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height:50px;">
                     <a class="navbar-brand" href="<?= BASE_URL; ?>">
                         <img src="<?= img_url('devHelper.png') ?>" alt="devHelper" />
                     </a>
@@ -91,20 +91,20 @@
 <!-------------------------------------------------Petit message perso post connexion-------------------------------->
 <!------------------------------------------------------------------------------------------------------------------->
 
-<?php if(isset($_SESSION['user'])): ?>
+<!-- <?php if(isset($_SESSION['user'])): ?>
 <span>Merci pour tes données perso <?=$_SESSION['user'];?> !</span>
 <?php endif;?>
 <?php if(isset($_SESSION['admin'])): ?>
 <span> <?=$_SESSION['admin'];?> est la meilleure Admin !</span>
-<?php endif;?>
+<?php endif;?> -->
 
-                </div>
-            </nav>
+                </nav>
+            </div>
         </header>
 
         <main role="main">
         <div class="album py-5 bg-light">
-            <div class="container">
+            <div class="">
                 <?php
                     // contenu de la page
                     echo $content; 
@@ -126,6 +126,7 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>  <!--  Script d'Isotope -->
         <script src="<?= js_url('script.js'); ?>"></script>
     </body>
 </html>

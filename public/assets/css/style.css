@@ -44,4 +44,6 @@ footer {
     margin-bottom: .25rem;
   }
 
-  
+  /* CSS Isotope*/
+.grid-item { width: 25%; }
+.grid-item-width2 { width: 50%; }
