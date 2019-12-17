@@ -54,7 +54,8 @@ footer {
   }
 
   a {
-    text-decoration: none;
+    text-decoration: none !important; 
+    color: #252525;
   }
   /* //-----------------------------------------------------------------------------//
 // \\--------------------style de la view public d'un seul site----------------------------//
@@ -66,6 +67,14 @@ footer {
 #onesite-icon{
   height: auto;
   align-content: center;
+}
+
+#onesite-icon{
+  transition: 0.2s;
+}
+#onesite-icon:hover{
+  margin-left: 10px;
+  margin-bottom: 3px;
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
