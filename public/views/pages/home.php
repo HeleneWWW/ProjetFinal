@@ -1,11 +1,10 @@
-<?php $title = 'Accueil'; ?>
 <?php ob_start(); ?>
 
 
 
-<div>
+<!-- <div>
     <img class="w-100" src="<?= img_url('banner3.png') ?>"  style="height: 50%;">
-</div>
+</div> -->
     
 
 <p>
