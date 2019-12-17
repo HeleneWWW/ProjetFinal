@@ -8,7 +8,7 @@
         <title><?= isset($title) ? $title : WEBSITE_TITLE ?></title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="<?= css_url('bootstrap.min.css'); ?>" rel="stylesheet">
         <link href="<?= css_url('style.css'); ?>" rel="stylesheet">
     </head>
     <body>
@@ -91,12 +91,12 @@
 <!-------------------------------------------------Petit message perso post connexion-------------------------------->
 <!------------------------------------------------------------------------------------------------------------------->
 
-<?php if(isset($_SESSION['user'])): ?>
+<!-- <?php if(isset($_SESSION['user'])): ?>
 <span>Merci pour tes données perso <?=$_SESSION['user'];?> !</span>
 <?php endif;?>
 <?php if(isset($_SESSION['admin'])): ?>
 <span> <?=$_SESSION['admin'];?> est la meilleure Admin !</span>
-<?php endif;?>
+<?php endif;?> -->
 
                 </div>
             </nav>
