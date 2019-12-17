@@ -1,3 +1,4 @@
+// Script pour Isotope et Masonry
 $('.grid').isotope({
     getSortData: { nombre: '.nombre parseInt'},
     sortBy : 'nombre',
