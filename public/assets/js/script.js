@@ -18,3 +18,13 @@ $('.grid').isotope({
          sortAscending: false
        });
    });
+
+
+
+//    $('.gridAll').masonry({
+// 	itemSelector: '.grid-item',
+// 	columnWidth: '.grid-sizer',
+// 	percentPosition: true,
+// 	gutter: 10,
+// 	horizontalOrder : true,
+// });

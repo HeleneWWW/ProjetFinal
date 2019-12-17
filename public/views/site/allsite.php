@@ -15,7 +15,7 @@
         <hr/>
         <?=  (!empty($alert)) ? $alert : '';  ?>
 
-    <div class="mt-4">
+    <!-- <div class="mt-4">
         <?php foreach ($sites as $site): ?>
             <div class="row mb-2">
                 <div class="col-2">
@@ -28,7 +28,35 @@
             </div>
         <?php endforeach; ?>
     </div>
+</div> -->
+
+<div class="gridAll">
+	<div class="grid-sizer">
+  <div class="grid-item">
+      <?php foreach ($sites as $site): ?>
+
+<div class="card" style="width: 18rem;">
+  <img src="<?= img_url($site['s_slug'].$site['s_imgindex']); ?>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><?= $site['s_nom']; ?></h5>
+    <a href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>" class="btn btn-primary">Plus d'info</a>
+  </div>
 </div>
+<?php endforeach; ?>
+
+  
+  </div>
+   
+   
+   
+   
+   
+</div>
+</div>
+
+
+
+
 
 <?php $content = ob_get_clean() ?> 
 <?php view('template', compact('content')); ?>
