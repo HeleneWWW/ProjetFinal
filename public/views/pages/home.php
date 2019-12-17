@@ -2,9 +2,9 @@
 
 
 
-<!-- <div>
-    <img class="w-100" src="<?= img_url('banner3.png') ?>"  style="height: 50%;">
-</div> -->
+<div>
+    <img class="w-100" src="<?= img_url('banner3.png') ?>">
+</div>
     
 
 <!-- Test Affichage Isotope Library -->
