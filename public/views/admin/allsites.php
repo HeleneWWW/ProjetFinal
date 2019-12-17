@@ -11,6 +11,9 @@
 
 <?php ob_start(); ?>
 
+    <div>
+        <img class="w-100" src="<?= img_url('fineban.png') ?>">
+    </div>
 <div class="container">
 
     <h1>Tous les sites qu'on a en stock !</h1>
