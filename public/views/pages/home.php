@@ -7,10 +7,6 @@
 </div> -->
     
 
-<p>
-    <?= $data ?>
-</p>
-
 <!-- Test Affichage Isotope Library -->
 <div id="filters" class="button-group">  
   <button class="button">Bouton 1</button>
