@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 16 déc. 2019 à 11:40
+-- Généré le :  mar. 17 déc. 2019 à 16:33
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.4
 
@@ -93,9 +93,86 @@ INSERT INTO `sites` (`s_id`, `s_nom`, `s_slug`, `s_url`, `s_imgindex`, `s_descri
 
 CREATE TABLE `sites_media` (
   `sm_id` int(11) NOT NULL,
-  `sm_url` int(11) NOT NULL,
+  `sm_url` varchar(255) NOT NULL,
   `s_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `sites_media`
+--
+
+INSERT INTO `sites_media` (`sm_id`, `sm_url`, `s_id`) VALUES
+(1, '4.png', 50),
+(2, '3.png', 50),
+(3, '2.png', 50),
+(4, '3.png', 21),
+(5, '2.png', 21),
+(6, '2.png', 48),
+(7, '3.png', 48),
+(8, '2.png', 46),
+(9, '3.png', 46),
+(10, '2.png', 38),
+(11, '2.png', 61),
+(12, '2.png', 47),
+(13, '3.png', 47),
+(14, '4.png', 47),
+(15, '2.png', 37),
+(16, '2.png', 24),
+(17, '3.png', 37),
+(18, '2.png', 53),
+(19, '3.png', 53),
+(20, '4.png', 53),
+(21, '2.png', 23),
+(22, '2.png', 57),
+(23, '3.png', 57),
+(24, '2.png', 34),
+(25, '3.png', 34),
+(26, '4.png', 34),
+(27, '2.png', 29),
+(28, '2.png', 58),
+(29, '3.png', 58),
+(30, '2.png', 36),
+(31, '3.png', 36),
+(32, '2.png', 51),
+(33, '3.png', 51),
+(34, '2.png', 41),
+(35, '3.png', 41),
+(36, '2.png', 56),
+(37, '2.png', 31),
+(38, '2.png', 44),
+(39, '2.png', 55),
+(40, '2.png', 22),
+(41, '2.png', 49),
+(42, '3.png', 49),
+(43, '2.png', 59),
+(44, '3.png', 59),
+(45, '2.png', 25),
+(46, '2.png', 32),
+(47, '4.png', 32),
+(48, '2.png', 45),
+(49, '2.png', 19),
+(50, '3.php', 19),
+(51, '2.png', 33),
+(52, '3.png', 33),
+(53, '2.png', 26),
+(54, '2.png', 35),
+(55, '2.png', 52),
+(56, '3.png', 52),
+(57, '2.png', 60),
+(58, '3.png', 60),
+(59, '2.png', 40),
+(60, '3.png', 40),
+(61, '4.png', 40),
+(62, '2.png', 28),
+(63, '3.png', 28),
+(64, '4.png', 28),
+(65, '2.png', 30),
+(66, '2.png', 27),
+(67, '2.png', 20),
+(68, '3.png', 20),
+(69, '2.png', 42),
+(70, '3.png', 42),
+(71, '2.png', 43);
 
 -- --------------------------------------------------------
 
@@ -106,25 +183,26 @@ CREATE TABLE `sites_media` (
 CREATE TABLE `tags` (
   `t_id` int(11) NOT NULL,
   `t_nom` varchar(255) NOT NULL,
-  `t_slug` varchar(255) NOT NULL
+  `t_slug` varchar(255) NOT NULL,
+  `t_img` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `tags`
 --
 
-INSERT INTO `tags` (`t_id`, `t_nom`, `t_slug`) VALUES
-(1, 'PHP', 'php'),
-(2, 'HTML', 'html'),
-(3, 'JavaScript', 'javascript'),
-(4, 'CSS', 'css'),
-(5, 'SQL', 'sql'),
-(6, 'jQuery', 'jquery'),
-(7, 'Ajax', 'ajax'),
-(8, 'Librairie', 'librairie'),
-(9, 'Jeux', 'jeux'),
-(10, 'Serveur', 'serveur'),
-(11, 'Tutos', 'tutos');
+INSERT INTO `tags` (`t_id`, `t_nom`, `t_slug`, `t_img`) VALUES
+(1, 'PHP', 'php', '1.png'),
+(2, 'HTML', 'html', '1.png'),
+(3, 'JavaScript', 'javascript', '1.png'),
+(4, 'CSS', 'css', '1.png'),
+(5, 'SQL', 'sql', '1.png'),
+(6, 'jQuery', 'jquery', '1.png'),
+(7, 'Ajax', 'ajax', '1.png'),
+(8, 'Librairie', 'librairie', NULL),
+(9, 'Jeux', 'jeux', NULL),
+(10, 'Serveur', 'serveur', NULL),
+(11, 'Tutos', 'tutos', NULL);
 
 -- --------------------------------------------------------
 
@@ -261,11 +339,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`u_id`, `u_email`, `u_pseudo`, `u_password`, `u_status`) VALUES
-(1, 'fab@gmail.com', 'Alexeï', '$2y$10$oQwtWi/CKJStDTRVps3pJesk9WAzOODZn1hO9OcHy.zvuYTUh50Qu', 0),
 (2, 'hw@gmail.com', 'HeleneW', '$2y$10$oQwtWi/CKJStDTRVps3pJesk9WAzOODZn1hO9OcHy.zvuYTUh50Qu', 1),
 (3, 'gaelledu34@gmail.com', 'Framb', '$2y$10$oQwtWi/CKJStDTRVps3pJesk9WAzOODZn1hO9OcHy.zvuYTUh50Qu', 1),
 (4, 'llf@gmail.com', 'Uranie', '$2y$10$oQwtWi/CKJStDTRVps3pJesk9WAzOODZn1hO9OcHy.zvuYTUh50Qu', 1),
-(5, 'kenny@gmail.com', 'Kenneth', '$2y$10$oQwtWi/CKJStDTRVps3pJesk9WAzOODZn1hO9OcHy.zvuYTUh50Qu', 0);
+(9, 'fab@gmail.com', 'gardechampetre', '$2y$10$204iH.4w3kTJlhlXzYK49ujWSwPKJNkc2DDewNNQhWtnNPJUVcv2i', 0),
+(10, 'pix@gmail.com', 'Pix', '$2y$10$sbuWH6UBbJ7jNGuw5pFuuetL8D3md2sYodrzZvdg4fSjpmxH/Ds5e', 0);
 
 --
 -- Index pour les tables déchargées
@@ -318,7 +396,7 @@ ALTER TABLE `sites`
 -- AUTO_INCREMENT pour la table `sites_media`
 --
 ALTER TABLE `sites_media`
-  MODIFY `sm_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT pour la table `tags`
@@ -336,7 +414,7 @@ ALTER TABLE `tag_site`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
