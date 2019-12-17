@@ -4,7 +4,7 @@
 
 
 <div>
-    <img src="<?= img_url('banner3.png') ?>"  style="height: 50%;">
+    <img class="w-100" src="<?= img_url('banner3.png') ?>"  style="height: 50%;">
 </div>
     
 

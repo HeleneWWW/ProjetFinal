@@ -13,8 +13,8 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height:50px;">
-                <div class="container">    
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height:50px;">
                     <a class="navbar-brand" href="<?= BASE_URL; ?>">
                         <img src="<?= img_url('devHelper.png') ?>" alt="devHelper" />
                     </a>
@@ -98,13 +98,13 @@
 <span> <?=$_SESSION['admin'];?> est la meilleure Admin !</span>
 <?php endif;?> -->
 
-                </div>
-            </nav>
+                </nav>
+            </div>
         </header>
 
         <main role="main">
         <div class="album py-5 bg-light">
-            <div class="container">
+            <div class="">
                 <?php
                     // contenu de la page
                     echo $content; 
