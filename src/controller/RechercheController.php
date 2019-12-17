@@ -1,42 +1,47 @@
 <?php
 
-class Recherche {
+class RechercheController {
 
     public function search(){
-        $form = new Form($_GET);
-        $form->input("text", 'query','Recherche')->required()
-             ->submit('rechercher');
+    //         $form = new Form($_GET);
+    //         $form->input("text", 'query','Recherche')->required()
+    //              ->submit('rechercher');
 
-    $formhtml = $form->getForm();
+    //     $searchformhtml = $form->getForm();
+    //     $formValid  = false;
+    //     $errors     = false; 
+    //    // si le formulaire est validé 
+    //     if($data = $form->valid()){
 
-    $formValid  = false;
-    $errors     = false; 
+    //         // formulaire valide
+    //         $formValid = true;
 
-    // si le formulaire est validé 
-    if($data = $form->valid()){
-
-
-
-        // formulaire valide
-        $formValid = true;
-
-        $nom = Site::findByName();
-        $tag = Site::finByTag();
-        // var_dump($nom,$tag);
-        // Enregistrement des données
-
-    } else {
-        // affichage des erreurs 
-        $errors =  $form->displayErrors();
-        
-    }
-
-    view('pages.allsite', compact('formhtml', 'formValid', 'errors'));
-    // view('site.allsite', compact('formhtml', 'formValid', 'errors'));
-    // view('site.onesite', compact('formhtml', 'formValid', 'errors'));
-
-
+if(isset($_GET['site'])){
+            // $nom = Site::findByName($query);
+            $tag = Site::findByTag($_GET['site']);
+            $alert = '';
+            echo 'quelquechose';
+}else{
+    $alert = alerte('Pas de recherche vide');
+    echo 'rien';
 }
+           
+
+// var_dump($tag);
+
+    //     } else {
+    //         // affichage des erreurs 
+    //         $errors =  $form->displayErrors();
+            
+    //     }
+
+
+        view('pages.search', compact('tag','alert'));
+        // view('site.allsite', compact('searchformhtml', 'formValid', 'errors'));
+        // view('site.onesite', compact('searchformhtml', 'formValid', 'errors'));
+
+
+    }
 
 }
 

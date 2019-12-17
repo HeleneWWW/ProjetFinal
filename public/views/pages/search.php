@@ -2,16 +2,9 @@
 <?php ob_start(); ?>
 
 <h1>Votre recherche</h1>
-<?php if (!$formValid): ?>
 
-    <?= $errors; ?>
-    <!-- formulaire -->
-    <?= $formhtml; ?>
+<?= var_dump($alert); ?>
 
-<?php else: ?>
-
-    <p>Votre demande à bien été prise en compte.</p>
-
-<?php endif; ?>
+<?= var_dump($tag); ?>
 
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>

@@ -7,7 +7,7 @@
     <img src="<?= img_url('banner2.png') ?>"  style="height: 50%;">
 </div>
     
-<?php var_dump($formhtml); ?>
+
 <p>
     <?= $data ?>
 </p>

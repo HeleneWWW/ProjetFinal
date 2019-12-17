@@ -8,6 +8,9 @@
 
 <?php ob_start(); ?>
 
+
+
+
 <h1><?= $site['s_nom'];  ?></h1>
 
 <h6>Tags associés : </h6>
@@ -16,6 +19,9 @@
 <?php endforeach; ?>
 <img src="" width="100%" alt="">
  
+<?php foreach ($image as $img):?>
+<li><?= $tag['t_nom'];?></li>
+<?php endforeach; ?>
 
 
 

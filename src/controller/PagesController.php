@@ -10,6 +10,9 @@ class PagesController {
         // données à récuperer de mon model 
         $data = 'Il faut faire la page d\'accueil!';
         view('pages.home', compact('data'));
+
+
+        
     }
 
     public function about() {
@@ -168,6 +171,8 @@ redirectTo('');
     public function show($id){
         $site = Site::findOne($id);
         $tags = Site::tagsAssocies($id);
+        $images = Site::findMedias($id);
+
 // var_dump($site);
         view('site.onesite', compact('site','tags'));
     }

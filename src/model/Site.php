@@ -171,9 +171,10 @@ public static function findByTag($search){
     $bdd = Db::getDb();
     $query = $bdd->prepare("SELECT sites.*,tags.* 
                             from sites 
-                            INNER JOIN tag_site ON sites.s_id = tag_site.s_id
+                            JOIN tag_site ON sites.s_id = tag_site.s_id
                             join tags ON tags.t_id = tag_site.t_id
                             WHERE tags.t_nom LIKE '%:search%'");
+
                             $query->execute([
                                 'search' => $search
                             ]);
@@ -190,6 +191,7 @@ function findByName($name){
     $query = $bdd->prepare("SELECT sites.* 
                             from sites 
                             WHERE sites.s_nom LIKE '%:name%'");
+
                             $query->execute([
                                 'name' => $name
                             ]);

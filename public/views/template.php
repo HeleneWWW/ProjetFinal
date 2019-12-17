@@ -22,22 +22,20 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                    <li class="nav-item">
-                                <a class="nav-link" href="<?= url('signup') ?>">S'inscrire</a>
-                            </li>
+                    
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------Barre de recherche------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-<!--                         
-                        <form action="search.php" method="get" id="form-search">
+                        
+                        <form action="<?= url('search') ?>" method="get" id="form-search">
                             <div class="input-group mb-6">
                                 <input type="text" class="form-control" placeholder="Rechercher un site" id="input-site" name="site">
                             <div class="input-group-append">
                                 <button class="btn btn-success" type="submit" id="button">Rechercher</button>
                             </div>
                             </div>
-                        </form> -->
+                        </form>
 
                     <?php if((isset($_SESSION['user'])) || (isset($_SESSION['admin']))): ?>
                             <li class="nav-item">
@@ -46,6 +44,9 @@
                     <?php else :?>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= url('login') ?>">Connexion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= url('signup') ?>">S'inscrire</a>
                             </li>
                     <?php endif; ?>
 

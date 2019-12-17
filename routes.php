@@ -5,6 +5,7 @@ $router = new Router();
 
 // example.com
 $router->get('', 'PagesController@home');
+$router->get('', 'PagesController@login'); 
 
 // example.com/a-propos
 $router->get('a-propos', 'PagesController@about');
@@ -22,8 +23,10 @@ $router->get('plateforme/update/{id}', 'PlateformesController@update');
 $router->get('login', 'PagesController@login'); 
 $router->post('login', 'PagesController@login');
 
+
 // pages sites  PageController
 $router->get('site', 'PagesController@all');
+
 // page INFO d'un seul site
 $router->get('site/{id}/{slug}', 'PagesController@show');
 
@@ -35,7 +38,7 @@ $router->post('signup', 'PagesController@signup');
 
 
 //---------------------------------------------------------------------------------------------------------\\
-// ------------------------------------------ADMIN-----------------------------------------------------------\\
+// ------------------------------------------ADMIN---------------------------------------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
 
             //admin AJOUTER un site
@@ -48,9 +51,13 @@ $router->post('admin/site/add', 'AdminController@addSite');
 $router->get('admin/site/delete/{id}', 'AdminController@deleteSite');
 
 
-//Recherche
-$router->get('', 'RechercheController@search'); 
-// $router->post('search', 'RechercheController@search');
+//---------------------------------------------------------------------------------------------------------\\
+// ------------------------------------------RECHERCHE-----------------------------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
+
+$router->get('search', 'RechercheController@search'); 
+
+
 
 //déconnexion
 $router->get('logout', 'PagesController@logout'); 
