@@ -173,7 +173,7 @@ public static function findByTag($search){
                             from sites 
                             JOIN tag_site ON sites.s_id = tag_site.s_id
                             join tags ON tags.t_id = tag_site.t_id
-                            WHERE tags.t_nom LIKE '%:search%'");
+                            WHERE tags.t_nom LIKE :search ");
 
                             $query->execute([
                                 'search' => $search
@@ -190,10 +190,10 @@ function findByName($name){
     $bdd = Db::getDb();
     $query = $bdd->prepare("SELECT sites.* 
                             from sites 
-                            WHERE sites.s_nom LIKE '%:name%'");
+                            WHERE sites.s_slug LIKE :name ");
 
                             $query->execute([
-                                'name' => $name
+                                'name' => '%'.$name.'%'
                             ]);
                             return $query->fetchAll(PDO::FETCH_ASSOC);
                             

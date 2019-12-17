@@ -9,10 +9,15 @@
 
 <?php ob_start(); ?>
 
-<h1>Ajouter un site</h1>
-<?= $errors; ?>
-<!-- formulaire -->
-<?= $formulaireHtml; ?>
+<div class="container">
+
+    <h1>Ajouter un site</h1>
+        <hr/>
+    <?= $errors; ?>
+    <!-- formulaire -->
+    <?= $formulaireHtml; ?>
+
+</div>
 
 <?php $content = ob_get_clean() ?> 
 <?php view('template', compact('content')); ?>

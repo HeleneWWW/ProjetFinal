@@ -13,41 +13,26 @@
     </head>
     <body>
         <header>
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height:50px;">
-                    <a class="navbar-brand" href="<?= BASE_URL; ?>">
-                        <img src="<?= img_url('devHelper.png') ?>" alt="devHelper" />
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-<!------------------------------------------------------Barre de recherche------------------------------------------------------------------------------------------------------------------>
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-                        
-                        <form action="<?= url('search') ?>" method="get" id="form-search">
-                            <div class="input-group mb-6">
-                                <input type="text" class="form-control" placeholder="Rechercher un site" id="input-site" name="site">
-                            <div class="input-group-append">
-                                <button class="btn btn-success" type="submit" id="button">Rechercher</button>
-                            </div>
-                            </div>
-                        </form>
-                        <li class="nav-item">
-                                <a class="nav-link" href="<?= url('a-propos') ?>">A Propos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?= url('contact') ?>">Contact</a>
-                            </li>
-                            
-                           
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="<?= url('site') ?>">Sites</a>
-                            </li> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height : 50px;">
+                <a class="navbar-brand" href="<?= BASE_URL; ?>">
+                    <img src="<?= img_url('devHelper.png') ?>" alt="devHelper" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= url('a-propos') ?>">A Propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= url('contact') ?>">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= url('site') ?>">Sites</a>
+                    </li>
 
 
 <!---------------------------------------------------------------------------------------------------------------->
@@ -97,6 +82,36 @@
 <?php if(isset($_SESSION['admin'])): ?>
 <span> <?=$_SESSION['admin'];?> est la meilleure Admin !</span>
 <?php endif;?> -->
+
+                <form class="form-inline my-2 my-lg-0" action="<?= url('search') ?>" method="get" id="form-search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un site" aria-label="Recherche">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+                </form>
+            </div>
+        </nav>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------Barre de recherche------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+                        
+                        <!-- <form action="<?= url('search') ?>" method="get" id="form-search">
+                            <div class="input-group mb-6">
+                                <input type="text" class="form-control" placeholder="Rechercher un site" id="input-site" name="site">
+                            <div class="input-group-append">
+                                <button class="btn btn-success" type="submit" id="button">Rechercher</button>
+                            </div>
+                            </div>
+                        </form> -->
+                        
+                            
+                           
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="<?= url('site') ?>">Sites</a>
+                            </li> -->
+
+
+
+
 
                 </nav>
             </div>
