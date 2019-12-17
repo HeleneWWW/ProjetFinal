@@ -4,7 +4,7 @@ $('.grid').masonry({
     columnWidth: 160
   });
   
-   $('.gridAll').masonry({
+   $('.grid').masonry({
 	itemSelector: '.grid-item',
 	columnWidth: '.grid-sizer',
 	percentPosition: true,
