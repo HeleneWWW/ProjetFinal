@@ -7,42 +7,45 @@ $router = new Router();
 $router->get('', 'PagesController@home');
 $router->get('', 'PagesController@login'); 
 
-// example.com/a-propos
-$router->get('a-propos', 'PagesController@about');
 
-// example.com/contact
-$router->get('contact', 'PagesController@contact');
-
-// reception des données 
-$router->post('contact', 'PagesController@contact');
-
-// pages avec parametre 
-$router->get('plateforme/update/{id}', 'PlateformesController@update');
-
-//Connexion utilisateur
+//---------------------------------------------------------------------------------------------------------\\
+// -------------------------------------UTILISATEUR (PAGES CONTROLLER)-------------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
+            //Connexion utilisateur
 $router->get('login', 'PagesController@login'); 
 $router->post('login', 'PagesController@login');
 
-// Page AllSitesByTags
+            //déconnexion
+$router->get('logout', 'PagesController@logout'); 
 
-// $router->get('tag/{id}/{slug}', 'TagController@show');
-
-// pages sites  PageController
-$router->get('site', 'PagesController@all');
-
-// page INFO d'un seul site
-$router->get('site/{id}/{slug}', 'PagesController@show');
-
-// affiche les sites par tag
-$router->get('tagsite/{id}/{slug}', 'PagesController@allSitesByTag');
-
-
-
-//Inscription utilisateur
+            //Inscription utilisateur
 $router->get('signup', 'PagesController@signup'); 
 $router->post('signup', 'PagesController@signup');
 
+//---------------------------------------------------------------------------------------------------------\\
+// ------------------------------------------PAGE CONTROLLER-----------------------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
 
+            // pages sites  PageController
+$router->get('site', 'PagesController@all');
+
+            // page INFO d'un seul site
+$router->get('site/{id}/{slug}', 'PagesController@show');
+
+            // affiche les sites par tag
+$router->get('tagsite/{id}/{slug}', 'PagesController@allSitesByTag');
+
+            //a-propos
+$router->get('a-propos', 'PagesController@about');
+
+            // contact
+$router->get('contact', 'PagesController@contact');
+
+            // reception des données 
+$router->post('contact', 'PagesController@contact');
+
+// page 404
+$router->set404('PagesController@page404');
 
 //---------------------------------------------------------------------------------------------------------\\
 // ------------------------------------------ADMIN---------------------------------------------------------\\
@@ -57,21 +60,12 @@ $router->post('admin/site/add', 'AdminController@addSite');
             //admin DELETE un site
 $router->get('admin/site/delete/{id}', 'AdminController@deleteSite');
 
-
 //---------------------------------------------------------------------------------------------------------\\
 // ------------------------------------------RECHERCHE-----------------------------------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
 
 $router->get('search', 'RechercheController@search'); 
 
-
-
-//déconnexion
-$router->get('logout', 'PagesController@logout'); 
-
-
-// page 404
-$router->set404('PagesController@page404');
 
 // Run the routes
 $router->run();

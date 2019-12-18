@@ -13,7 +13,7 @@
 
         <?php else: ?>
 
-<?= $errors; ?>
+        <?= $errors; ?>
 
 
 <u><a href='<?= url('login');?>'>Essaye encore !</a></u><hr>

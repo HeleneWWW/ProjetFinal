@@ -26,7 +26,6 @@ class PagesController {
     public function all(){
         // appel a la BDD 
         $sites = Site::findAll();
-        // $tags = Site::findOne();
 
         view('site.allsite', compact('sites'));
     }
@@ -92,9 +91,6 @@ class PagesController {
         // formulaire valide
         $formValid = true;
 
-        // ENregistrement des données
-        //var_dump($_POST);
-
    $info = User::connect($_POST['pseudo'], $_POST['password']);
             // var_dump($info);
         if ($info === true){
@@ -109,7 +105,7 @@ class PagesController {
         
     }
 
-    // vue de la page contact 
+    // vue de la page login 
         view('pages.login', compact('formhtml', 'formValid', 'errors'));
 
 }else{
@@ -141,24 +137,26 @@ redirectTo('');
 
                 
                         if($form->valid()){
-                            $formValid = true;
-                            $register = User::register();
-                            if($register === true){
-                                    redirectTo('login');
-                            }else{
-                                $errors = $register;    
-                            }
-            // var_dump($register);
                             
+                            $formValid = true;
+
+                            $register = User::register();
+
+                            if($register === true){
+
+                                    redirectTo('login');
+
+                            }else{
+
+                                $errors = $register;    
+                            }                            
                         }else{
+
                         $errors = $form->displayErrors();
 
-                    }
-                
- 
+                        }
             }
    view('pages.signup', compact('formhtml', 'errors', 'formValid'));
-
 }
 
 

@@ -5,14 +5,16 @@
     
        
         <?php if (!$formValid): ?>
+
 <h1>C'est par là pour t'inscrire :</h1> <hr/>
-<?= $errors; ?>
-<!-- formulaire -->
-<?= $formhtml; ?>
 
-<?php else: ?>
+        <?= $errors; ?>
+        <!-- formulaire -->
+        <?= $formhtml; ?>
 
-<?= $errors; ?>
+        <?php else: ?>
+
+        <?= $errors; ?>
 
 
 <u><a href='<?= url('signup');?>'>Essaye encore !</a></u><hr>

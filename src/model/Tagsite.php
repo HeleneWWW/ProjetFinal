@@ -50,7 +50,7 @@ public static function save($data) {
 
 
 //---------------------------------------------------------------------------------------------------------\\
-// ------------------------------------------POUR UPDATER UN SITE -----------------------------------------\\
+// ------------------------------------------POUR UPDATER LA TABLE ----------------------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
 public static function update($data, $id) {
 
@@ -68,13 +68,12 @@ public static function update($data, $id) {
 public static function delete($id) {
 
     Db::dbDelete(self::TABLE_NAME, ['s_id' => $id ]);
-    // DELETE FROM `tag_site` WHERE `tag_site`.`ts_id` = 35;
     return;
 }
 
 
 //---------------------------------------------------------------------------------------------------------\\
-// ------------------------------------------POUR AVOIR LA LISTE DE TOUS LES SITES -----------------------------------------\\
+// ------------------------------------------POUR AVOIR LA LISTE DE TOUS LES SITES ------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
 public static function findAll() {
 
@@ -86,15 +85,14 @@ public static function findAll() {
     // je l'execute 
     $query->execute();
 
-    // je retourne la liste d'articles
+    // je retourne la liste des sites
     return $query->fetchAll(PDO::FETCH_ASSOC);       
 }
 
 
 //---------------------------------------------------------------------------------------------------------\\
-// ------------------------------------------POUR TROUVER UN SITE par son id -----------------------------------------\\
+// ------------------------------------------POUR TROUVER UN SITE par son id ------------------------------\\
 //---------------------------------------------------------------------------------------------------------\\
-
 
 public static function findOne(int $id) {
 
@@ -116,7 +114,7 @@ public static function findOne(int $id) {
 
 
 //---------------------------------------------------------------------------------------------------------\\
-// ------------------------------------------POUR TROUVER LES SCREENSHOTS ASSOCIES A UN SITE -----------------------------------------\\
+// ------------------------------------------POUR TROUVER LES SCREENSHOTS ASSOCIES A UN SITE --------------\\
 //---------------------------------------------------------------------------------------------------------\\
 
 public static function findMedias(int $id) {
@@ -139,10 +137,8 @@ public static function findMedias(int $id) {
 
 
 //---------------------------------------------------------------------------------------------------------\\
-// ------------------------------------------POUR TROUVER LES TAGS ASSOCIES A UN SITE -----------------------------------------\\
+// ------------------------------------------POUR TROUVER LES TAGS ASSOCIES A UN SITE ---------------------\\
 //---------------------------------------------------------------------------------------------------------\\
-
-
 public static function tagsAssocies(int $id) {
 
     $bdd = Db::getDb();
@@ -161,28 +157,6 @@ public static function tagsAssocies(int $id) {
     return $query->fetchAll(PDO::FETCH_ASSOC);
 
 }
-
-// public static function sameAs($id, $genre_id) {
-
-//     $bdd = Db::getDb();
-
-//     $query = $bdd->prepare('SELECT *
-//                         FROM '. self::TABLE_NAME .'
-//                         WHERE jv_id != :id
-//                         AND genre_id = :genre
-//                         ORDER BY RAND()
-//                         LIMIT 0, 2');
-
-//     // je l'execute 
-//     $query->execute([
-//         'id' => $id, 
-//         'genre' => $genre_id
-//     ]);
-
-//     // je retourne la liste d'articles
-//     return $query->fetchAll(PDO::FETCH_ASSOC);       
-// }
-
 
 
 /**

@@ -7,11 +7,13 @@
         <hr/>
 
     <?php if($tag): ?>
+
     <h1>Sites associés au tag : <?=$tag[0]['t_nom']; ?></h1>
         <?php foreach($tag as $info): ?>
         <img src="<?= img_url($info['s_slug'].$info['s_imgindex']); ?>" width="10%" alt="">
     <a href ="<?= url('site/'.$info['s_id'].'/'.$info['s_slug']); ?>"><h6><?= $info['s_nom']; ?></h6></a>
         <?php endforeach; ?>
+        
     <?php else: ?>
 
         <?php if($nom):  ?>

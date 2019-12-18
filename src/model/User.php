@@ -32,6 +32,13 @@ class User extends Db{
      /**
      * CRUD Methods
      */
+
+
+//---------------------------------------------------------------------------------------------------------\\
+// -----------------------------------------------POUR SE CONNECTER ---------------------------------------\\
+//---------------------------------------------------------------------------------------------------------\\
+
+
     public static function connect($pseudo, $pw){
         $bdd = Db::getDb();
 
@@ -43,6 +50,7 @@ class User extends Db{
     $query->execute([
         'pseudo' => htmlentities($pseudo)
     ]);
+
     $user = $query->fetch(PDO::FETCH_ASSOC);
     if($user){
         $verify = password_verify($pw,$user['u_password']);
@@ -53,7 +61,7 @@ class User extends Db{
             
             if($user["u_status"] == 0){
                 $_SESSION['user'] = $user['u_pseudo'];
-                // var_dump($user);
+
                 redirectTo('');
             return true;
             
@@ -64,19 +72,17 @@ class User extends Db{
             return true;
             
             }
-
-          
-
         }
         else{
             
             return 'Mauvais mot de passe';
+
         }
     }
     else{
         
-
         return 'Ce pseudo nous est inconnu !';
+
         }
     }
 
@@ -91,22 +97,28 @@ class User extends Db{
 public static function register(){
     //connexion à la BDD
     $bdd = Db::getDb();
+
+    //verification de l'email
     $verifMail = $bdd->prepare('SELECT u_email FROM user WHERE u_email = :mail');
     $verifMail->execute([
         'mail' => htmlentities($_POST['email'])
     ]);
+
+    //verification du pseudo
     $verifpseudo = $bdd->prepare('SELECT u_pseudo FROM user WHERE u_pseudo = :pseudo');
     $verifpseudo->execute([
         'pseudo' => htmlentities($_POST['pseudo'])
     ]);
     $checkpseudo = $verifpseudo->fetch(PDO::FETCH_ASSOC);
     $checkmail = $verifMail->fetch(PDO::FETCH_ASSOC);
-        if(empty($checkmail)){
-            if(empty($checkpseudo)){
+    //si l'email n'est pas en BDD...
+        if(empty($checkmail)){ //...verifie le pseudo
+            if(empty($checkpseudo)){ //si le pseudo n'est pas en BDD, prepare la requête
                 $req = $bdd->prepare("INSERT INTO user(`u_pseudo`,`u_email`,`u_password`,`u_status`) VALUES (:pseudo, :mail, :pw , :status)");
 
+                //si aucun des champs n'est vde...
                 if(!empty($_POST['pseudo'])&&!empty($_POST['email'])&&!empty($_POST['password2'])&&!empty($_POST['password'])){
-                    if ($_POST['password'] === $_POST['password2']){
+                    if ($_POST['password'] === $_POST['password2']){ //...vérifie que les passwords sont égaux
                         $req->execute([
                             'pseudo' => htmlentities($_POST['pseudo']),
                             'mail' => htmlentities($_POST['email']),
@@ -115,7 +127,6 @@ public static function register(){
                     }else{
                        return 'Les mots de passe doivent être identiques !';
                     }
-    
                 }else{
                     return 'Merci de renseigner tous les champs !';
                 }
@@ -124,13 +135,10 @@ public static function register(){
             }
             }else{
                 return 'Cette adresse mail est déjà utilisée !';
-            }
-
-            
+            } 
    return true;
 }
 
 
 }
 
-///////////////////

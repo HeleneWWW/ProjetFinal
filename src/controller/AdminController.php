@@ -19,18 +19,24 @@ public function __construct(){
         public function allSite() {
             // appel a la BDD 
             $sites = Site::findAll();
-            
-            // $tags = Site::findOne();
             $alert ='';
-if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
-    // var_dump($_SESSION);
-   $alert = alerte('Suppression réussie','success');
-    
-    unset($_SESSION['delete']);
-}
+            $alertadd ="";
+
+                    if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
+                        
+                    $alert = alert('Suppression réussie','success');
+                        
+                        unset($_SESSION['delete']);
+
+                    }elseif((isset($_SESSION['add'])) &&  ($_SESSION['add'] == true)){
+                       
+                    $alertadd = alert('Ajout réussi','success');
+                        
+                        unset($_SESSION['add']);
+                    }
           
-            view('admin.allsites', compact('sites','alert'));
-            // unset($_SESSION['delete']);
+            view('admin.allsites', compact('sites','alert','alertadd'));
+ 
         }
         
 //---------------------------------------------------------------------------------------------------------\\
@@ -68,7 +74,7 @@ if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
 
                         // formulaire valide
                         $formValid = true;
-                    
+                        
                         // Enregistrement des données
                       $id = Site::save([
                             "s_nom"     => $data['nom'],
@@ -76,7 +82,6 @@ if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
                             "s_url"   => $data['url'],
                             "s_imgindex"   => $data['image'],
                             "s_description"   => $data['description']
-                            // 's_id'   => $data['tags']
                         ]);
 
                         for($i = 0; $i<count($_POST['tags']); $i++) {
@@ -86,21 +91,15 @@ if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
                                 't_id' => $_POST['tags'][$i]
                             ]);
                         }
-                        // redirection apres ajout en BDD 
-                        // redirectTo('site/'.$id.'/'.slugify($data['nom']));
-                        //redirection pendant le developpement
-                        redirectTo('admin/site/add');
-                        // redirectTo('admin/site/add');
-
+                        $_SESSION['add'] = true;
+                        redirectTo('admin/site');
                     } else {
                         // affichage des erreurs 
                         $errors =  $form->displayErrors();
                     }
                 }
-                
-                // vue de la page contact 
-                view('admin.addsite', compact('formulaireHtml','errors','alert'));
-   
+                // vue de la page addsite 
+                view('admin.addsite', compact('formulaireHtml','errors' ));  
         }
 //---------------------------------------------------------------------------------------------------------\\
 // ------------------------------------------POUR SUPPRIMER UN SITE ---------------------------------------\\
@@ -115,7 +114,4 @@ if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
               redirectTo('admin/site');
                
             }
-
-
-
     }

@@ -1,12 +1,7 @@
-<?php if(isset($_SESSION['delete'])){
-               
-               unset($_SESSION['delete']);
-            };
-
-//---------------------------------------------------------------------------------------//
+<?php
+ //---------------------------------------------------------------------------------------//
 //--------------------la view ADMIN de tous les sites en bdd----------------------------//
 //---------------------------------------------------------------------------------------// 
-
 ?>
 
 <?php ob_start(); ?>
@@ -15,7 +10,8 @@
 
     <h1>Tous les sites qu'on a en stock !</h1>
         <hr/>
-    <?=  (!empty($alert)) ? $alert : '' ; ?>
+    <?= (!empty($alert)) ? $alert : '' ; ?>
+    <?= (!empty($alertadd)) ? $alertadd : '' ; ?>
 
     <a href="<?=url('admin/site/add'); ?>" class="btn btn-primary">Ajouter un nouveau site</a>
 
