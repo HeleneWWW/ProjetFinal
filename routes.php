@@ -33,6 +33,10 @@ $router->get('site', 'PagesController@all');
 // page INFO d'un seul site
 $router->get('site/{id}/{slug}', 'PagesController@show');
 
+// affiche les sites par tag
+$router->get('tag/{id}/{slug}', 'PagesController@allSiteTag');
+
+
 
 //Inscription utilisateur
 $router->get('signup', 'PagesController@signup'); 

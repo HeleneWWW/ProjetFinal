@@ -53,6 +53,9 @@ footer {
     /* margin-bottom: .25rem; */
   }
 
+footer a{
+  color: #f3f3f3;
+}
 
 
 /* STYLE DES LIENS */
@@ -128,8 +131,8 @@ footer {
   }
    */
 
-   
-/* STYLE VIEW ALLSITE */
+
+/* ----------------------------------------------------STYLE VIEW ALLSITE---------------------------------------------------- */
 
    #allsite{
      display: flex;
@@ -166,6 +169,9 @@ footer {
    }
 
 
+   /* ----------------------------------------------------STYLE VIEW ONESITE---------------------------------------------------- */
+
+   
 /* STYLE VIEW ONESITE */
 
 #onesite-icon{

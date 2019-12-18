@@ -102,7 +102,7 @@
 
                     </ul>
                     <form class="form-inline my-2 my-lg-0 d-none d-sm-block" action="<?= url('search') ?>" method="get" id="form-search">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un site" aria-label="Recherche">
+                        <input name ='site' class="form-control mr-sm-2" type="search" placeholder="Rechercher un site" aria-label="Recherche">
                         <button class="searchbtn btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
                     </form>
                 </div>
@@ -146,9 +146,9 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <h5 class="text-uppercase font-weight-bold">L'équipe :</h5>
-                        <p>- LE CALVEZ Gaëlle |  </p>
-                        <p>- LE FAY Laetitia | </p>
-                        <p>- WITKOWSKI Helene |</p><br/>
+                        <p>- LE CALVEZ Gaëlle | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">linkedin.com/lecalvezgaelle</a> </p>
+                        <p>- LE FAY Laetitia | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">linkedin.com/lefaylaetitia</a> </p>
+                        <p>- WITKOWSKI Helene | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">linkedin.com/witkowskihelene</a></p><br/>
                     </div>
 
             <hr class="clearfix w-100 d-md-none ">
