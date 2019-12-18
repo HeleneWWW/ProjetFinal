@@ -7,8 +7,10 @@ class PagesController {
     /* Page d'acceuil  */ 
     public function home() {
 
+        $tags = Tags::findAllTags();
+
         // données à récuperer de mon model
-        view('pages.home', compact('data'));
+        view('pages.home', compact('tags'));
 
 
 

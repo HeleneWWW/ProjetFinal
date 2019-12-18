@@ -84,48 +84,7 @@ footer {
   margin-bottom: 3px;
 }
 
-/* -------------------------------------------------------------------------------------------------------- */
-  /* CSS Masonry HOME*/
-  * { box-sizing: border-box; }
-
-/* ---- grid ---- */
-
-.grid {
-  background: transparent;
-  max-width: 100%;
-
- }
-
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
- }
-
-/* ---- grid-item ---- */
-
-.grid-sizer,
-.grid-item {
-  width: 25%;
-}
-
-.grid-item {
-  height: 50%;
-  float: left;
-  background:transparent;
-  border: 1px solid;
-  border-color: #252525;
-  border-radius: 0px;
-}
-
-.grid-item--width2 { width:  25%; }
-.grid-item--width3 { width:  25%; }
-.grid-item--width4 { width:  25%; }
-
-.grid-item--height2 { height: 250px; }
-.grid-item--height3 { height: 400px; }
-.grid-item--height4 { height: 175px; }
+/* CSS HOME */
 
 
 /* -------------------------------------------------------------------------------------------------------- */
