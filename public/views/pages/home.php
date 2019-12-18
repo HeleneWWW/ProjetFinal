@@ -3,7 +3,7 @@
 
 
 <div>
-    <img class="w-100" src="<?= img_url('banner3.png') ?>">
+    <img class="w-100" src="<?= img_url('finalbanner.png') ?>">
 </div>
     
 
