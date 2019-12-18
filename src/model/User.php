@@ -108,10 +108,22 @@ public static function register(){
                         'mail' => htmlentities($_POST['email']),
                         'pw' => password_hash($_POST['password'],PASSWORD_BCRYPT),
                         'status' => 0 ]);
+                }else{
+                    alerte('Les mots de passe ne correspondent pas') ;
+                    redirectTo('signup');
+                    return false;
                 }
 
-            }   
+            }else{
+                alerte('Tous les champs doivent être renseignés !');
+                redirectTo('signup');
+                return false;
+            }
   
+        }else{
+            alerte('Cette adresse mail est déjà utilisé !');
+            redirectTo('signup');
+            return false;
         }
    return true;
 }

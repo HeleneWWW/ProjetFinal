@@ -67,4 +67,15 @@ class Tags extends Db{
     }
 
 
+
+
+    public static function siteByTag(){
+
+//ici, faire la jolie requête qui va bien, en prenant exemple sur celles du dessus
+
+
+
+    }
+
+
 }
