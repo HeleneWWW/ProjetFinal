@@ -4,17 +4,18 @@
 }
 
 html, footer {
-    background: #99a8b7;
+    background: #252525;
     
 }
 
 body {
   font-family: "Questrial", sans-serif;
-  background: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 footer {
-    color: #212529;
+    color: #f3f3f3;
+    background-color: #252525;
 }
 .bd-img {
     width : 100%;

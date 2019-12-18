@@ -113,8 +113,8 @@
 <!---------------------------------------------------Main------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------->
 
-        <main role="main" >
-            <div class="album py-5 bg-light ">
+        <main role="main " >
+            <div class="album py-5 bg-light">
 
 
 <!----------------------------Pour empêcher la mini bannière de s'afficher sur la home------------------------------->
@@ -141,7 +141,7 @@
 <!------------------------------------------------------------------------------------------------------------------->
 
         
-        <footer class="page-footer font-small bg-dark text-light pt-0">
+        <footer class="page-footer font-small pt-0">
             <div class="container-fluid text-center text-md-left">
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
