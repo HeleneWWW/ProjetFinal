@@ -10,19 +10,27 @@
     <div class='container'>
         <div class='' id= "public-onesite">
             <a title='Accéder au site' href="<?= $site['s_url']; ?>" class="p-5" target="_blank">
-                <img id='onesite-icon' src="<?= img_url($site['s_slug'].$site['s_imgindex']); ?>" width="50%" alt="">
-                <h3 class=""><?= $site['s_nom'];  ?></h3>
+                <img id='onesite-icon' class="float-left p-2 pb-3" src="<?= img_url($site['s_slug'].$site['s_imgindex']); ?>" width="50%" alt="">
+
             </a>
-            <p><?= $site['s_description']; ?></p>
+
+            <div class="pb-2">
+                <br/>
+                <a id="nomsite" title='Accéder au site' href="<?= $site['s_url']; ?>" class="" target="_blank">
+                    <h3 class=""><?= $site['s_nom'];  ?></h3>
+                </a>
+                <p class=""><?= $site['s_description']; ?></p>
+            </div>
+            
             
             <?php foreach ($images as $img):?>
-                <img src="<?= img_url($site['s_slug'].$img['sm_url']); ?>" width="100%" alt="">
+                <img id="screenshots" src="<?= img_url($site['s_slug'].$img['sm_url']); ?>" width="100%" alt="" class="m-1">
             <?php endforeach; ?>
             
-            <h6>Tags associés : </h6>
+            <h6><u>Tags associés :</u></h6>
             
             <?php foreach ($tags as $key => $tag):?>
-                <td><?= $tag['t_nom'];?></td>
+                <td><?= $tag['t_nom'].' | ';?></td> 
             <?php endforeach; ?>
                 <img src="" width="100%" alt="">
             

@@ -10,10 +10,12 @@
 
 <?php ob_start(); ?>
 
-
+  <div class="container">
     <h1>Tous les sites qu'on a en stock !</h1>
-        <hr/>
-        <?=  (!empty($alert)) ? $alert : '';  ?>
+      <hr/>
+    <?=  (!empty($alert)) ? $alert : '';  ?>
+  </div>
+   
 
 
 

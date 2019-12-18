@@ -207,3 +207,17 @@ footer {
    .searchbtn{
      color:#f3f3f3 !important;
    }
+
+
+/* STYLE VIEW ONESITE */
+
+#onesite-icon{
+  max-width:20%;
+  height: 250px;
+  width: 250px;
+}
+
+#screenshots{
+  border: 0.2rem solid;
+  border-color: #252525;
+}
