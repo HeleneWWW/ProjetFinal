@@ -30,7 +30,11 @@
             <h6><u>Tags associés :</u></h6>
             
             <?php foreach ($tags as $key => $tag):?>
-                <td><?= $tag['t_nom'].' | ';?></td> 
+
+                <a  href="<?= url('tagsite/'.$tag['t_id'].'/'.$tag['t_slug']); ?>" class="">
+                    <td><?= $tag['t_nom'].' | ';?></td>
+                </a>
+
             <?php endforeach; ?>
                 <img src="" width="100%" alt="">
             

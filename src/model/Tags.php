@@ -77,7 +77,8 @@ class Tags extends Db{
                             FROM tag_site
                             JOIN tags ON tags.t_id = tag_site.t_id
                             JOIN sites ON tag_site.s_id = sites.s_id
-                            WHERE tags.t_id = :id');
+                            WHERE tags.t_id = :id
+                            ORDER BY sites.s_nom ASC');
 
         // je l'execute 
         $query->execute([
