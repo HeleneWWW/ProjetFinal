@@ -34,7 +34,7 @@ $router->get('site', 'PagesController@all');
 $router->get('site/{id}/{slug}', 'PagesController@show');
 
 // affiche les sites par tag
-$router->get('tag/{id}/{slug}', 'PagesController@allSiteTag');
+$router->get('tagsite/{id}/{slug}', 'PagesController@allSitesByTag');
 
 
 

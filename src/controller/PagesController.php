@@ -180,11 +180,11 @@ redirectTo('');
     }
 
 
-    public function allSiteTag(){
-
-$sitebytag = Tag::siteByTag();
 //créer la page pour afficher en view (dans un doss tag à créer) ex: sitebytag.php
+    public function allSitesByTag($id, $slug){
+        $sitesbytag = Tags::sitesByTag($id);
 
+        view('tag.sitesbytag', compact('sitesbytag'));
     }
 
     

@@ -11,8 +11,10 @@
 <!-- Logos Tags -->
 
 <?php foreach ($tags as $tag):?>
-    <img src="<?= img_url($tag['t_slug'].$tag['t_img']); ?>" width="20%" alt="">
-    <?php endforeach; ?>
+    <a  href="<?= url('tagsite/'.$tag['t_id'].'/'.$tag['t_slug']); ?>" class="">
+        <img src="<?= img_url($tag['t_slug'].$tag['t_img']); ?>" width="20%" alt="">
+    </a>
+<?php endforeach; ?>
     
 
 <?php echo '<pre>';var_dump($tags) ?>

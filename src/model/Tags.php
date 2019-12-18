@@ -68,13 +68,25 @@ class Tags extends Db{
 
 
 
-
-    public static function siteByTag(){
-
 //ici, faire la jolie requête qui va bien, en prenant exemple sur celles du dessus
+    public static function sitesByTag($id){
 
+        $bdd = Db::getDb();
 
+        $query = $bdd->prepare('SELECT tag_site.*, sites.*, tags.*
+                            FROM tag_site
+                            JOIN tags ON tags.t_id = tag_site.t_id
+                            JOIN sites ON tag_site.s_id = sites.s_id
+                            WHERE tags.t_id = :id');
 
+        // je l'execute 
+        $query->execute([
+            'id' => $id,
+        ]);
+
+        $tags = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        return $tags;
     }
 
 
