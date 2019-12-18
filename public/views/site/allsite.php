@@ -16,40 +16,26 @@
         <?=  (!empty($alert)) ? $alert : '';  ?>
 
 
-        
-
-<!-- <?php foreach ($sites as $site): ?>
-<div class="card bd-highlight col-md-2 no-wrap">
-  <img src="<?= img_url($site['s_slug'].$site['s_imgindex']); ?>" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><?= $site['s_nom']; ?></h5>
-    <a href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>" class="btn btn-primary">Plus d'info</a>
-    </div>
-     </div>
-<?php endforeach; ?> -->
 
 
+<div class='container' id='allsite'>
+<div class='row'>
 
-<div class="container">
-
-<div class="card-group">
-  <div class="card">
-
+  <?php foreach ($sites as $site): ?>
+  <div class="card col-lg-2 col-md-3 col-sm-4 d-row">
     <img src="<?= img_url($site['s_slug'].$site['s_imgindex']); ?>" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><?= $site['s_nom']; ?></h5>
      
       
-      <a href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>" class="btn btn-primary">Plus d'info</a>
+      <a  href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>" class="btn btn-info">Plus d'info</a>
 
     </div>
+
   </div>
-  
+  <?php endforeach; ?>
 </div>
-
 </div>
-
-
 
 
 

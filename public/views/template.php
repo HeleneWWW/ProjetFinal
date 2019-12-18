@@ -103,7 +103,7 @@
                     </ul>
                     <form class="form-inline my-2 my-lg-0 d-none d-sm-block" action="<?= url('search') ?>" method="get" id="form-search">
                         <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un site" aria-label="Recherche">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+                        <button class="searchbtn btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
                     </form>
                 </div>
             </nav>
@@ -166,7 +166,7 @@
         
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="<?= js_url('masonry.pkgd.min.js'); ?>"></script>  <!--  Script d'Isotope -->
+        <script src="<?= js_url('masonry.pkgd.min.js'); ?>"></script>  <!--  Script de Masonry -->
         <script src="<?= js_url('script.js'); ?>"></script>
     </body>
 </html>
