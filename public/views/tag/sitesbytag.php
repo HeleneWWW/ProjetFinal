@@ -25,8 +25,6 @@
             <?php endforeach; ?>
         </div>
 
-        <?php echo '<pre>';var_dump($sitesbytag) ?>
-
     </div>
 
 <?php $content = ob_get_clean() ?> 

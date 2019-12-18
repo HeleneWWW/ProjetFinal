@@ -162,7 +162,6 @@ redirectTo('');
 
 
 
-
     public function logout(){
         User::logout();
         redirectTo('login');
@@ -175,7 +174,6 @@ redirectTo('');
         $tags = Site::tagsAssocies($id);
         $images = Site::findMedias($id);
 
-// var_dump($site);
         view('site.onesite', compact('site','tags','images'));
     }
 
