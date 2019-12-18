@@ -39,7 +39,7 @@ class PagesController {
             ->input('text', "email", "E-mail")->required()->is_email()
             ->input('text', "nom", "Nom du site")->required()
             ->input('text', "lien", "Lien du site")->required()->is_url()
-            ->input('textarea', "description", "Description")
+            ->input('textarea', "description", "Description")->max(250)
             ->submit('Envoyer');
 
         $formulaireHtml = $form->getForm();
@@ -97,8 +97,10 @@ class PagesController {
 
    $info = User::connect($_POST['pseudo'], $_POST['password']);
             // var_dump($info);
-        if ($info){
+        if ($info === true){
             redirectTo('');
+        }else{
+            $errors = $info; 
         }
      } else {
          
@@ -119,44 +121,43 @@ redirectTo('');
 
     public function signup(){
         
-        if((!isset($_SESSION['user'])) || (!isset($_SESSION['admin']))){
+            if((!isset($_SESSION['user'])) || (!isset($_SESSION['admin']))){
 
-            $form = new Form($_POST);
+                $form = new Form($_POST);
 
-        $form->input("text", 'pseudo','Ton pseudo')->required()->min(8)->max(30)
-            ->input('text', "email", "Ton e-mail")->required()->is_email()
-            ->input('password', "password", "Ton mot de passe")->required()->min(8)->max(50)
-            ->input('password', "password2", "Confirmation de ton mot de passe")->required()->equal('password')->min(8)->max(50)
+            $form->input("text", 'pseudo','Ton pseudo')->required()->min(5)->max(25)
+                ->input('text', "email", "Ton e-mail")->required()->is_email()
+                ->input('password', "password", "Ton mot de passe")->required()->min(8)
+                ->input('password', "password2", "Confirmation de ton mot de passe")->required()
 
-            ->submit('enregistrer');
+                ->submit('enregistrer');
 
-        $formhtml = $form->getForm();
+            $formhtml = $form->getForm();
 
-        $formValid  = false;
-        $errors     = false; 
+            $formValid  = false;
+            $errors     = false; 
 
-        // si le formulaire est validé 
-        if($data = $form->valid()){
+            // si le formulaire est validé 
 
-            // formulaire valide
-            $formValid = true;
+                
+                        if($form->valid()){
+                            $formValid = true;
+                            $register = User::register();
+                            if($register === true){
+                                    redirectTo('login');
+                            }else{
+                                $errors = $register;    
+                            }
+            // var_dump($register);
+                            
+                        }else{
+                        $errors = $form->displayErrors();
 
-            // Enregistrement des données
-        $register = User::register();
-        var_dump($register);
-        if($register){
-            // redirectTo('');
-        }
-
-        } else {
-            // affichage des erreurs 
-            $errors =  $form->displayErrors();
-        }
-
-        // vue de la page contact 
-        view('pages.signup', compact('formhtml', 'errors', 'formValid'));
-
-    }
+                    }
+                
+ 
+            }
+   view('pages.signup', compact('formhtml', 'errors', 'formValid'));
 
 }
 
@@ -182,7 +183,7 @@ redirectTo('');
 
     public function allSiteTag(){
 
-$sitebytag = Tag::siteByTag();
+$sitebytag = Tags::siteByTag();
 //créer la page pour afficher en view (dans un doss tag à créer) ex: sitebytag.php
 
     }

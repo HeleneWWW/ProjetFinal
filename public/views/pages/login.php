@@ -11,11 +11,15 @@
         <!-- formulaire -->
         <?= $formhtml; ?>
 
-    <?php else: ?>
+        <?php else: ?>
 
-        <!-- <p>Votre demande à bien été prise en compte.</p> -->
+<?= $errors; ?>
 
-    <?php endif; ?>
+
+<u><a href='<?= url('login');?>'>Essaye encore !</a></u><hr>
+
+<img src="https://media.giphy.com/media/jPAdK8Nfzzwt2/giphy.gif"/>
+<?php endif; ?>
 
 </div>
 

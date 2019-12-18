@@ -220,7 +220,7 @@ class Form {
     public function required(){
 
         if(($this->value == '' || $this->value == null)){
-            $this->errors[$this->name] = 'Le champ '.$this->label.' est obligatoire.';
+            $this->errors[$this->name] = 'Le champ '.$this->name.' est obligatoire.';
         }
 
         return $this;

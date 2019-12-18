@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 18 déc. 2019 à 10:12
+-- Généré le :  mer. 18 déc. 2019 à 16:45
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.4
 
@@ -192,17 +192,17 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`t_id`, `t_nom`, `t_slug`, `t_img`) VALUES
-(1, 'PHP', 'php', '1.png'),
+(1, 'PHP', 'php', '1.svg'),
 (2, 'HTML', 'html', '1.png'),
 (3, 'JavaScript', 'javascript', '1.png'),
 (4, 'CSS', 'css', '1.png'),
 (5, 'SQL', 'sql', '1.png'),
 (6, 'jQuery', 'jquery', '1.png'),
-(7, 'Ajax', 'ajax', '1.png'),
-(8, 'Librairie', 'librairie', NULL),
-(9, 'Jeux', 'jeux', NULL),
-(10, 'Serveur', 'serveur', NULL),
-(11, 'Tutos', 'tutos', NULL);
+(7, 'Ajax', 'ajax', '1.svg'),
+(8, 'Librairie', 'librairie', '1.png'),
+(9, 'Jeux', 'jeux', '1.png'),
+(10, 'Serveur', 'serveur', '1.png'),
+(11, 'Tutos', 'tutos', '1.png');
 
 -- --------------------------------------------------------
 
@@ -414,7 +414,7 @@ ALTER TABLE `tag_site`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Contraintes pour les tables déchargées

@@ -2,19 +2,23 @@
 
 <div class="container">
 
-    <h1>C'est par là pour t'inscrire :</h1>
-        <hr/>
-    <?php if (!$formValid): ?>
+    
+       
+        <?php if (!$formValid): ?>
+<h1>C'est par là pour t'inscrire :</h1> <hr/>
+<?= $errors; ?>
+<!-- formulaire -->
+<?= $formhtml; ?>
 
-        <?= $errors; ?>
-        <!-- formulaire -->
-        <?= $formhtml; ?>
+<?php else: ?>
 
-    <?php else: ?>
+<?= $errors; ?>
 
-        <!-- <p>Votre demande à bien été prise en compte.</p> -->
 
-    <?php endif; ?>
+<u><a href='<?= url('signup');?>'>Essaye encore !</a></u><hr>
+
+<img src="https://media.giphy.com/media/jPAdK8Nfzzwt2/giphy.gif"/>
+<?php endif; ?>
 
 </div>
 

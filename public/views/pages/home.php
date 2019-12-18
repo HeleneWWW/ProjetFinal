@@ -15,6 +15,5 @@
     <?php endforeach; ?>
     
 
-<?php echo '<pre>';var_dump($tags) ?>
 <!-- FIN DU TEST -->
 <?php $content = ob_get_clean() ?> <?php view('template', compact('content')); ?>

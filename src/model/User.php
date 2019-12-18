@@ -60,24 +60,23 @@ class User extends Db{
 
             }else{
                 $_SESSION['admin'] = $user['u_pseudo'];
-                redirectTo('');
+                
             return true;
             
-
             }
 
           
 
         }
         else{
-            redirectTo('login');
-            return false;
+            
+            return 'Mauvais mot de passe';
         }
     }
     else{
-        redirectTo('login');
+        
 
-        return false;
+        return 'Ce pseudo nous est inconnu !';
         }
     }
 
@@ -96,35 +95,38 @@ public static function register(){
     $verifMail->execute([
         'mail' => htmlentities($_POST['email'])
     ]);
-    $check = $verifMail->fetch(PDO::FETCH_ASSOC);
-        if(empty($check)){
+    $verifpseudo = $bdd->prepare('SELECT u_pseudo FROM user WHERE u_pseudo = :pseudo');
+    $verifpseudo->execute([
+        'pseudo' => htmlentities($_POST['pseudo'])
+    ]);
+    $checkpseudo = $verifpseudo->fetch(PDO::FETCH_ASSOC);
+    $checkmail = $verifMail->fetch(PDO::FETCH_ASSOC);
+        if(empty($checkmail)){
+            if(empty($checkpseudo)){
+                $req = $bdd->prepare("INSERT INTO user(`u_pseudo`,`u_email`,`u_password`,`u_status`) VALUES (:pseudo, :mail, :pw , :status)");
 
-            $req = $bdd->prepare("INSERT INTO user(`u_pseudo`,`u_email`,`u_password`,`u_status`) VALUES (:pseudo, :mail, :pw , :status)");
-
-            if(!empty($_POST['pseudo'])&&!empty($_POST['email'])&&!empty($_POST['password2'])&&!empty($_POST['password'])){
-                if ($_POST['password'] === $_POST['password2']){
-                    $req->execute([
-                        'pseudo' => htmlentities($_POST['pseudo']),
-                        'mail' => htmlentities($_POST['email']),
-                        'pw' => password_hash($_POST['password'],PASSWORD_BCRYPT),
-                        'status' => 0 ]);
+                if(!empty($_POST['pseudo'])&&!empty($_POST['email'])&&!empty($_POST['password2'])&&!empty($_POST['password'])){
+                    if ($_POST['password'] === $_POST['password2']){
+                        $req->execute([
+                            'pseudo' => htmlentities($_POST['pseudo']),
+                            'mail' => htmlentities($_POST['email']),
+                            'pw' => password_hash($_POST['password'],PASSWORD_BCRYPT),
+                            'status' => 0 ]);
+                    }else{
+                       return 'Les mots de passe doivent être identiques !';
+                    }
+    
                 }else{
-                    alerte('Les mots de passe ne correspondent pas') ;
-                    redirectTo('signup');
-                    return false;
+                    return 'Merci de renseigner tous les champs !';
                 }
-
             }else{
-                alerte('Tous les champs doivent être renseignés !');
-                redirectTo('signup');
-                return false;
+                return 'Ce pseudo est déjà utilisé !';
             }
-  
-        }else{
-            alerte('Cette adresse mail est déjà utilisé !');
-            redirectTo('signup');
-            return false;
-        }
+            }else{
+                return 'Cette adresse mail est déjà utilisée !';
+            }
+
+            
    return true;
 }
 
