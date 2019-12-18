@@ -29,11 +29,8 @@
         <?php endforeach; ?>
      -->
 
-<div class="grid">
-	<div class="grid-sizer">
+
     <?php foreach ($sites as $site): ?>
-  <div class="grid-item">
-     
 
 <div class="card" style="width: 18rem;">
   <img src="<?= img_url($site['s_slug'].$site['s_imgindex']); ?>" class="card-img-top" alt="...">
@@ -47,11 +44,6 @@
    
     <?php endforeach; ?>
    
-   
-</div>
-</div>
-
-</div>
 
 
 
