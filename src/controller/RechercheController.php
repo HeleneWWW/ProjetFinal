@@ -18,7 +18,9 @@ class RechercheController {
 
 // $tag = Site::findByTag();
 // $alert = '';
+
 $tag = '';
+$nom = '';
 if(!empty($_GET['site'])){
 
     $tag = Site::findByTag($_GET['site']);
@@ -36,21 +38,8 @@ redirectTo('pages.404');
 }else{
     $alert = alerte('Pas de recherche vide');
 }
-           
-
-// var_dump($tag);
-
-    //     } else {
-    //         // affichage des erreurs 
-    //         $errors =  $form->displayErrors();
-            
-    //     }
-
-
+        
         view('pages.search', compact('tag','alert','nom'));
-        // view('site.allsite', compact('searchformhtml', 'formValid', 'errors'));
-        // view('site.onesite', compact('searchformhtml', 'formValid', 'errors'));
-
 
     }
 
