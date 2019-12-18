@@ -53,9 +53,16 @@ footer {
     /* margin-bottom: .25rem; */
   }
 
+
+
+/* STYLE DES LIENS */
   a {
     text-decoration: none !important; 
     color: #252525;
+  }
+  a:hover{
+    color: #a883d0;
+
   }
   /* //-----------------------------------------------------------------------------//
 // \\--------------------style de la view public d'un seul site----------------------------//
@@ -150,3 +157,40 @@ footer {
     }
   }
    */
+
+   
+/* STYLE VIEW ALLSITE */
+
+   #allsite{
+     display: flex;
+     /* float: right; */
+     flex-wrap: wrap;
+
+     align-content: center;
+   }
+   #allsite .card-body{
+     align-content: center;
+    
+   }
+   .card{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+   }
+   .btn{
+     background-color:  #a883d0;
+     border-color: #a883d0;
+   }
+   .btn:hover{
+     background-color: #a7e36b;
+     border-color: #a7e36b;
+   }
+
+   .searchbtn{
+     color:#f3f3f3 !important;
+   }
