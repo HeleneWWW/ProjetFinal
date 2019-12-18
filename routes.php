@@ -23,6 +23,9 @@ $router->get('plateforme/update/{id}', 'PlateformesController@update');
 $router->get('login', 'PagesController@login'); 
 $router->post('login', 'PagesController@login');
 
+// Page Tag
+
+// $router->get('tag', 'TagController@allTags'); 
 
 // pages sites  PageController
 $router->get('site', 'PagesController@all');

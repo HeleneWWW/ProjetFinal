@@ -84,39 +84,10 @@ footer {
   margin-bottom: 3px;
 }
 
+/* CSS HOME */
+
+
 /* -------------------------------------------------------------------------------------------------------- */
-  /* CSS Masonry HOME*/
-  .grid {
-    background: #f3f3f3;
-    max-width: 100%;
-  }
-  
-  /* clearfix  */
-.grid:after {
-    content: '';
-    display: block;
-    clear: both;
-  } 
-  
-  /* ---- grid-item ---- */
-  
-  .grid-item {
-    width: 160px;
-    height: 120px;
-    float: left;
-    background:transparent;
-    border: 0px solid #252525;
-    border-color: #252525;
-    border-radius: 0px;
-  }
-  
-  .grid-item--width2 { width: 320px; }
-  .grid-item--width3 { width: 480px; }
-  .grid-item--width4 { width: 640px; }
-  
-  .grid-item--height2 { height: 200px; }
-  .grid-item--height3 { height: 260px; }
-  .grid-item--height4 { height: 360px; } 
 
 /* CSS About */
 
@@ -125,12 +96,13 @@ footer {
   height: 20%;
   float : left; 
 }
+/* -------------------------------------------------------------------------------------------------------- */
 
 
-* /*wild card*/
+ /* * wild card
 {
 	box-sizing: border-box;
-}
+}  */
 
 
 
@@ -199,3 +171,15 @@ footer {
    /* ----------------------------------------------------STYLE VIEW ONESITE---------------------------------------------------- */
 
    
+/* STYLE VIEW ONESITE */
+
+#onesite-icon{
+  max-width:20%;
+  height: 250px;
+  width: 250px;
+}
+
+#screenshots{
+  border: 0.2rem solid;
+  border-color: #252525;
+}

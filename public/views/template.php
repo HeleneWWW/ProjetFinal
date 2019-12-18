@@ -24,7 +24,7 @@
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
                 <a class="navbar-brand" href="<?= BASE_URL; ?>">
-                    <img src="<?= img_url('devHelper.png') ?>" alt="devHelper" class="d-none d-md-block" />
+                    <img src="<?= img_url('fullLogo.png') ?>" alt="devHelper" class="d-none d-md-block" style="height: 47px; width: 158px;"/>
                     <img src="<?= img_url('dh.png') ?>" alt="devHelper" class="d-md-none" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -160,13 +160,13 @@
                 </div>
             </div>
             <div class="footer-copyright text-center pb-2">© 2019 Copyright :
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">  devHelper.com</a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">  devHelper.com</a>
             </div>
         </footer>
         
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="<?= js_url('masonry.pkgd.min.js'); ?>"></script>  <!--  Script d'Isotope -->
+        <script src="<?= js_url('masonry.pkgd.min.js'); ?>"></script>  <!--  Script de Masonry -->
         <script src="<?= js_url('script.js'); ?>"></script>
     </body>
 </html>
