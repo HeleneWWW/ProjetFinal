@@ -163,7 +163,6 @@ redirectTo('');
 
 
 
-
     public function logout(){
         User::logout();
         redirectTo('login');
@@ -176,16 +175,15 @@ redirectTo('');
         $tags = Site::tagsAssocies($id);
         $images = Site::findMedias($id);
 
-// var_dump($site);
         view('site.onesite', compact('site','tags','images'));
     }
 
 
-    public function allSiteTag(){
-
-$sitebytag = Tags::siteByTag();
 //créer la page pour afficher en view (dans un doss tag à créer) ex: sitebytag.php
+    public function allSitesByTag($id, $slug){
+        $sitesbytag = Tags::sitesByTag($id);
 
+        view('tag.sitesbytag', compact('sitesbytag'));
     }
 
     

@@ -82,7 +82,8 @@ public static function findAll() {
     $bdd = Db::getDb();
 
     $query = $bdd->prepare('SELECT *
-                        FROM '. self::TABLE_NAME);
+                        FROM '. self::TABLE_NAME.'
+                        ORDER BY s_nom ASC');
 
     // je l'execute 
     $query->execute();

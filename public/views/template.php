@@ -113,8 +113,8 @@
 <!---------------------------------------------------Main------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------->
 
-        <main role="main" >
-            <div class="album py-5 bg-light ">
+        <main role="main " >
+            <div class="album py-5 bg-light">
 
 
 <!----------------------------Pour empêcher la mini bannière de s'afficher sur la home------------------------------->
@@ -141,13 +141,13 @@
 <!------------------------------------------------------------------------------------------------------------------->
 
         
-        <footer class="page-footer font-small bg-dark text-light pt-3">
+        <footer class="page-footer font-small pt-0">
             <div class="container-fluid text-center text-md-left">
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <h5 class="text-uppercase font-weight-bold">L'équipe :</h5>
-                        <p>- LE CALVEZ Gaëlle | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">linkedin.com/lecalvezgaelle</a> </p>
-                        <p>- LE FAY Laetitia | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">linkedin.com/lefaylaetitia</a> </p>
+                        <p>- LE CALVEZ Gaëlle | <a href="https://www.youtube.com/watch?v=UcRtFYAz2Yo" target="_blank">linkedin.com/lecalvezgaelle</a> </p>
+                        <p>- LE FAY Laetitia | <a href="https://worldofwarcraft.com/fr-fr/character/eu/archimonde/vounette" target="_blank">linkedin.com/lefaylaetitia</a> </p>
                         <p>- WITKOWSKI Helene | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">linkedin.com/witkowskihelene</a></p><br/>
                     </div>
 
@@ -166,7 +166,6 @@
         
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="<?= js_url('masonry.pkgd.min.js'); ?>"></script>  <!--  Script de Masonry -->
         <script src="<?= js_url('script.js'); ?>"></script>
     </body>
 </html>
