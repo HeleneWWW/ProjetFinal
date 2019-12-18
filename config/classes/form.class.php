@@ -372,7 +372,8 @@ class Form {
     public function equal($value){
     
         if($this->value != $value){
-            $this->errors[$this->name] = 'Le champ '.$this->name.' ne correspond pas.';
+            // $this->errors[$this->name] = 'Le champ '.$this->name.' ne correspond pas.';
+            $this->erros[$this->name] = 'Les mots de passe de correspondent pas !';
         }
         return $this;
         

@@ -126,7 +126,7 @@ redirectTo('');
         $form->input("text", 'pseudo','Ton pseudo')->required()->min(8)->max(30)
             ->input('text', "email", "Ton e-mail")->required()->is_email()
             ->input('password', "password", "Ton mot de passe")->required()->min(8)->max(50)
-            ->input('password', "password2", "Confirmation de ton mot de passe")->required()->equal(isset($_POST['password']))->min(8)->max(50)
+            ->input('password', "password2", "Confirmation de ton mot de passe")->required()->equal('')->min(8)->max(50)
 
             ->submit('enregistrer');
 
@@ -143,9 +143,9 @@ redirectTo('');
 
             // Enregistrement des données
         $register = User::register();
-        // var_dump($register);
+        var_dump($register);
         if($register){
-            redirectTo('');
+            // redirectTo('');
         }
 
         } else {
