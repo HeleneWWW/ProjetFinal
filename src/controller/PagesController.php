@@ -130,7 +130,7 @@ redirectTo('');
                 ->input('password', "password", "Ton mot de passe")->required()->min(8)
                 ->input('password', "password2", "Confirmation de ton mot de passe")->required()
 
-                ->submit('enregistrer');
+                ->submit('S\'inscrire');
 
             $formhtml = $form->getForm();
 

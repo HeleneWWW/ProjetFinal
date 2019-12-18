@@ -148,7 +148,7 @@
                         <h5 class="text-uppercase font-weight-bold">L'équipe :</h5>
                         <p>- LE CALVEZ Gaëlle | <a href="https://www.youtube.com/watch?v=UcRtFYAz2Yo" target="_blank">linkedin.com/lecalvezgaelle</a> </p>
                         <p>- LE FAY Laetitia | <a href="https://worldofwarcraft.com/fr-fr/character/eu/archimonde/vounette" target="_blank">linkedin.com/lefaylaetitia</a> </p>
-                        <p>- WITKOWSKI Helene | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">linkedin.com/witkowskihelene</a></p><br/>
+                        <p>- WITKOWSKI Helene | <a href="https://www.youtube.com/watch?v=z9Uz1icjwrM" target="_blank">linkedin.com/witkowskihelene</a></p><br/>
                     </div>
 
             <hr class="clearfix w-100 d-md-none ">
