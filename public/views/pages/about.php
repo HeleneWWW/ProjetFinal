@@ -5,10 +5,10 @@
     <h1>A Propos</h1>
         <hr/>
     <h2>Qui ? </h2>
-    <div><p>3 apprenantes en développement Web au sein du centre de formation WebForce3 Lyon : Gaëlle, Hélène, Laetitia.</p></div>
-    <div><img class="logo" src="<?= img_url('GLC_logo.png') ?>"  style="height: 50%;"><img class="logo" src="<?= img_url('HW_logo.png') ?>"  style="height: 50%;"><img class="logo" src="<?= img_url('LLF_logo.png') ?>"  style="height: 50%;"></div><br>
+    <div><p>3 apprenantes en développement Web au sein du centre de formation WebForce3 Lyon : Gaëlle, Hélène et Laetitia.</p></div>
+    <!-- <div><img src="<?= img_url('GLC_logo.png') ?>"  style="height: 120px; width: 120px;"><img src="<?= img_url('HW_logo.png') ?>"  style="height: 120px; width: 120px;"><img src="<?= img_url('LLF_logo.png') ?>"  style="height: 120px; width: 120px;"></div> -->
 
-    <br><h2>Quoi ? </h2>
+    <h2>Quoi ? </h2>
 
     <div><p><b>devHelper</b> est un projet de validation de fin de formation en Développement Web.<br>
     Notre idée est de rassembler <b>le plus de ressources Web possibles</b> liées au monde du Développement Web
