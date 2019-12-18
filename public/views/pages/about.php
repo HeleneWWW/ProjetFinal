@@ -6,7 +6,7 @@
         <hr/>
     <h2>Qui ? </h2>
     <div><p>3 apprenantes en développement Web au sein du centre de formation WebForce3 Lyon : Gaëlle, Hélène, Laetitia.</p></div>
-    <div><img class="logo" src="<?= img_url('GLC_logo.png') ?>"  style="height: 50%;"><img class="logo" src="<?= img_url('HW_logo.png') ?>"  style="height: 50%;"><img class="logo" src="<?= img_url('LLF_logo.png') ?>"  style="height: 50%;"></div><br>
+    <!-- <div><img class="logo" src="<?= img_url('GLC_logo.png') ?>"  style="height: 50%;"><img class="logo" src="<?= img_url('HW_logo.png') ?>"  style="height: 50%;"><img class="logo" src="<?= img_url('LLF_logo.png') ?>"  style="height: 50%;"></div><br> -->
 
     <br><h2>Quoi ? </h2>
 
@@ -18,7 +18,7 @@
     Nous espérons que vous y trouverez ce dont vous avez besoin pour débuter l'aventure du développement ou trouver un complément d'informations pour vos projets présents et futurs.</p>
     </div>
     <h2>Qomment ?</h2>
-    <div><p>Développé en quelques jour en local grâce aux techniques <b>MVC</b>, mélant <b>HTML, CSS, PHP</b>. Nous avons utilisé les logiciels <b>Xampp, PHPMyAdmin, Visual Studio Code</b> ainsi que la library Isotope. <b>Trello</b> et <b>GitHub</b> nous ont servi pour la gestion du projet du début à la fin.
+    <div><p>Développé en quelques jour en local grâce aux techniques <b>MVC</b>, mélant <b>HTML, CSS, PHP</b>. Nous avons utilisé les logiciels <b>Xampp, PHPMyAdmin, Visual Studio Code</b>. <a href="https://trello.com/b/TXjJ943O/devhelper" target="_blank"><b>Trello</b></a>, <a href="https://github.com/HeleneWWW/ProjetFinal" target="_blank"><b>GitHub</b></a>, <a href="https://www.gloomaps.com/rmjsAfbrYG" target="_blank"><b>GlooMaps</b></a> nous ont servi pour la gestion du projet du début à la fin.
     Evidemment <b>Slack</b>, <b>Discord</b> et la suite Google ont été de bons outils pour ce projet.</p></div>
 
 </div>
