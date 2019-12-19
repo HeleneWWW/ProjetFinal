@@ -17,7 +17,7 @@
                     <h5 class="card-title"><?= $site['s_nom']; ?></h5>
                     
                     
-                    <a  href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>" class="btn btn-info">Plus d'info</a>
+                    <a  href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>" class="btn btn-info btn-block mt-auto">Plus d'info</a>
 
                     </div>
 

@@ -27,10 +27,10 @@
   <div class="card col-lg-2 col-md-3 col-sm-4 d-row">
     <img src="<?= img_url($site['s_slug'].$site['s_imgindex']); ?>" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title"><?= $site['s_nom']; ?></h5>
+      <h5 class="card-title"><?= $site['s_nom']; ?></h5><br/>
      
       
-      <a  href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>" class="btn btn-info">Plus d'info</a>
+      <a  href="<?= url('site/'.$site['s_id'].'/'.$site['s_slug']); ?>" class="btn btn-info btn-block mt-auto">Plus d'info</a>
 
     </div>
 
