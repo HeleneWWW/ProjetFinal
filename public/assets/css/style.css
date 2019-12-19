@@ -142,3 +142,16 @@ footer a{
   border: 0.2rem solid;
   border-color: #252525;
 }
+
+
+
+.searchbox{
+  display: flex;
+  border:0.1rem solid #252525 ;
+  display: inline;
+  margin: 2px;
+  padding-left: 10px;
+  width: 250px;
+
+
+}
