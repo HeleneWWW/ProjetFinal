@@ -20,7 +20,7 @@ public function __construct(){
             // appel a la BDD 
             $sites = Site::findAll();
             $alert ='';
-            $alertadd ="";
+            $alertadd ='';
 
                     if((isset($_SESSION['delete'])) &&  ($_SESSION['delete'] == true)){
                         
@@ -60,7 +60,7 @@ public function __construct(){
                     ->input('text', "image", "Image du site")
                     ->input('text', "url", "Url du site")->required()
                     ->input('textarea', "description", "Description")->required()
-                    ->input('checkbox', 'tags', "Tags", $tags)   //->required()
+                    ->input('checkbox', 'tags', "Tags", $tags)  
                     ->submit('Enregistrer');
             // var_dump($_POST);
                 $formulaireHtml = $form->getForm();
