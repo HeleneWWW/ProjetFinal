@@ -17,7 +17,7 @@
     Nous avons donc décidé de créer le site que nous aurions aimé avoir dans nos favoris au début de notre formation de Developpeur Web.<br>
     Nous espérons que vous y trouverez ce dont vous avez besoin pour débuter l'aventure du développement ou trouver un complément d'informations pour vos projets présents et futurs.</p>
     </div>
-    <h2>Qomment ?</h2>
+    <h2>Comment ?</h2>
     <div><p>Développé en quelques jour en local grâce aux techniques <b>MVC</b>, mélant <b>HTML, CSS, PHP</b>. Nous avons utilisé les logiciels <b>Xampp, PHPMyAdmin, Visual Studio Code</b>. <a href="https://trello.com/b/TXjJ943O/devhelper" target="_blank"><b>Trello</b></a>, <a href="https://github.com/HeleneWWW/ProjetFinal" target="_blank"><b>GitHub</b></a>, <a href="https://www.gloomaps.com/rmjsAfbrYG" target="_blank"><b>GlooMaps</b></a> nous ont servi pour la gestion du projet du début à la fin.
     Evidemment <b>Slack</b>, <b>Discord</b> et la suite Google ont été de bons outils pour ce projet.</p></div>
 

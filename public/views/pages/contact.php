@@ -3,7 +3,7 @@
 
 <div class="container">
 
-    <h1>Qontact</h1>
+    <h1>Contact</h1>
         <hr/>
         <?php if (!$formValid): ?>
 

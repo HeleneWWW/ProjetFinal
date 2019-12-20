@@ -2,7 +2,7 @@
 
 <div class="container">
 
-    <h1>Qonnectez vous</h1>
+    <h1>Connectez vous</h1>
         <hr/>
 
     <?php if (!$formValid): ?>

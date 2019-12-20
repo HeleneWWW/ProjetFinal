@@ -37,7 +37,7 @@
                             <a class="nav-link" href="<?= url('a-propos') ?>">A Propos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= url('contact') ?>">Qontact</a>
+                            <a class="nav-link" href="<?= url('contact') ?>">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= url('site') ?>">Sites</a>
@@ -65,7 +65,7 @@
                             </li>
                     <?php else : ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= url('login') ?>">Qonnexion</a>
+                            <a class="nav-link" href="<?= url('login') ?>">Connexion</a>
                         </li>
                     <?php endif; ?>
                     
