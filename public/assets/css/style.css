@@ -60,7 +60,7 @@ footer a{
 }
 
 
-/* STYLE DES LIENS */
+/* -------------------------------STYLE DES LIENS------------------------------- */
   a {
     text-decoration: none !important; 
     color: #252525;
@@ -89,50 +89,7 @@ footer a{
   margin-bottom: 3px;
 }
 
-/* CSS HOME */
 
-/* -------------------------------------------------------------------------------------------------------- */
-
-/* CSS About */
-
-.logo {
-  width: 20%;
-  height: 20%;
-  float : left; 
-}
-/* -------------------------------------------------------------------------------------------------------- */
-
-
- /* * wild card
-{
-	box-sizing: border-box;
-}  */
-
-
-
-/* masonry allsite */
-/* .grid-sizer,.grid-item{
-	width: 100%;
-  margin: 1rem;
-  padding: 1rem;
-  
-}
-
-@media (min-width: 1200px){
-	.grid-sizer,.grid-item{
-	width: calc((100% - 15%) / 4);
-
-  }
-
-
-} 
- @media (max-width: 1199px){
-    .grid-sizer,.grid-item{
-    width: calc((100% - 15%) / 2);
-  
-    }
-  }
-   */
 
 
 /* ----------------------------------------------------STYLE VIEW ALLSITE---------------------------------------------------- */
@@ -175,8 +132,6 @@ footer a{
    /* ----------------------------------------------------STYLE VIEW ONESITE---------------------------------------------------- */
 
    
-/* STYLE VIEW ONESITE */
-
 #onesite-icon{
   max-width:20%;
   height: 250px;
@@ -186,4 +141,17 @@ footer a{
 #screenshots{
   border: 0.2rem solid;
   border-color: #252525;
+}
+
+
+
+.searchbox{
+  display: flex;
+  border:0.1rem solid #252525 ;
+  display: inline;
+  margin: 2px;
+  padding-left: 10px;
+  width: 250px;
+
+
 }
